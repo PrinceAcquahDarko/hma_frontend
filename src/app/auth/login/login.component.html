@@ -1,0 +1,20 @@
+<form #form ="ngForm" (ngSubmit)="loginUser()">
+    <div>
+        {{errormsg}}
+    </div>
+    <div>
+        <input type="email" name="email" required #emailField = 'ngModel' [(ngModel)] = "userCredentials.email">
+        <span [hidden]= "emailField.valid || emailField.untouched"> email is required and must be valid</span>
+    </div>
+
+    <div>
+        <input type="password" name = "password" required #passwordField = 'ngModel' [(ngModel)] = "userCredentials.password">
+        <span [hidden]= "passwordField.valid || passwordField.untouched"> password is required</span>
+    </div>
+ 
+    <button type="submit" [disabled] = "form.invalid">login</button>
+
+
+
+</form>
+
