@@ -27,6 +27,14 @@ export class AuthServiceService {
     )
   }
 
+  getUser(): Observable<any> {
+    return this.http.get(this.url + '/register').pipe(catchError(this.handleError))
+  }
+
+  updateUser(data: IRegister): Observable<any> {
+    return this.http.put(this.url + '/register', data).pipe(catchError(this.handleError))
+  }
+
   handleError(err:HttpErrorResponse){
     let message = '';
 

@@ -1,0 +1,39 @@
+
+<form [formGroup] = 'registerPatientForm' (ngSubmit) ="registerPatient()">
+    <div>
+    {{errormsg}}
+    </div>
+    <div>
+        <input type="text" placeholder="firstname" name="firstname" formControlName="firstname">
+        <div>
+            <span class="firstname" *ngIf="registerPatientForm.get('firstname')?.errors?.required && registerPatientForm.get('firstname')?.touched">firstname is required</span>
+        </div>
+    </div>
+
+    <div>
+        <input type="text" placeholder="lastname" name="lastname" formControlName="lastname">
+        <div>
+            <span *ngIf="registerPatientForm.get('lastname')?.errors?.required && registerPatientForm.get('lastname')?.touched">lastname is required</span>
+          </div>
+    </div>
+
+    <div>
+        <input type="number" placeholder="contact" name="contact" formControlName="contact">
+        <div>
+            <span *ngIf="registerPatientForm.get('contact')?.errors?.required && registerPatientForm.get('contact')?.touched">contact is required</span>
+          </div>
+   
+    </div>
+
+    <div>
+        <input type="text" placeholder="address" name="address" formControlName="address">
+        <div>
+            <span *ngIf="registerPatientForm.get('address')?.errors?.required && registerPatientForm.get('address')?.touched">address is required</span>
+          </div>
+          
+    </div>
+
+    <button type="submit" [disabled]="registerPatientForm.invalid">Register</button>
+  
+
+</form>

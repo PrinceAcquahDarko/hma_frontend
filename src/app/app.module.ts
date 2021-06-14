@@ -7,6 +7,8 @@ import {DoctorsModule} from './docDashboard/doctors.module'
 import {AuthModule} from './auth/auth.module'
 import { RouterModule } from '@angular/router';
 import { HelloComponent } from './hello/hello.component';
+import { FrontEndModule } from './frontEnd/front-end.module';
+import { HttpInterceptorModule } from './shared/http-interceptor';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,10 @@ import { HelloComponent } from './hello/hello.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    HttpInterceptorModule,
     AuthModule,
     DoctorsModule,
+    FrontEndModule,
     RouterModule.forRoot([
       {path: '', component: HelloComponent}
     ])

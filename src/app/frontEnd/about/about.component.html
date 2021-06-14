@@ -1,0 +1,60 @@
+<form [formGroup] = 'aboutUser' (ngSubmit) ="updateUser()">
+    <div>
+    {{errormsg}}
+    </div>
+    <div>
+        <input type="text" placeholder="firstname" name="firstname" formControlName="firstname">
+        <div>
+            <span class="firstname" *ngIf="aboutUser.get('firstname')?.errors?.required && aboutUser.get('firstname')?.touched">firstname is required</span>
+        </div>
+    </div>
+
+    <div>
+        <input type="text" placeholder="lastname" name="lastname" formControlName="lastname">
+        <div>
+            <span *ngIf="aboutUser.get('lastname')?.errors?.required && aboutUser.get('lastname')?.touched">lastname is required</span>
+          </div>
+    </div>
+
+    <div>
+        <input type="email" placeholder="email" name="email" formControlName="email">
+        <div>
+            <span *ngIf="aboutUser.get('email')?.errors?.required && aboutUser.get('email')?.touched">email is required</span>
+          </div>
+          <div>
+            <span *ngIf="aboutUser.get('email')?.errors?.email && aboutUser.get('email')?.touched">must be a valid email</span>
+          </div>
+    </div>
+
+    <div>
+        <input type="text" placeholder="position" name="position" formControlName="position">
+        <div>
+            <span *ngIf="aboutUser.get('position')?.errors?.required && aboutUser.get('position')?.touched">position is required</span>
+          </div>
+          
+    </div>
+
+    <div formGroupName="passwordGroup">
+        <div>
+            <input type="password"  placeholder="password" name="password" formControlName="password">
+            <div>
+              <span *ngIf="aboutUser.get('passwordGroup.password')?.errors?.required && aboutUser.get('passwordGroup.password')?.touched">password is required</span>
+              <span *ngIf="aboutUser.get('passwordGroup.password')?.errors?.minlength && aboutUser.get('passwordGroup.password')?.touched">password must be six characters or more</span>
+            </div>
+        </div>
+
+        <div>
+            <input type="password" placeholder="confirmPassword" name="confirmPassword" formControlName="confirmPassword">
+            <div>
+              <span *ngIf="aboutUser.get('passwordGroup.confirmPassword')?.errors?.required && aboutUser.get('passwordGroup.confirmPassword')?.touched">Confirm password is required</span>
+              <span *ngIf="aboutUser.get('passwordGroup.confirmPassword')?.errors?.minlength && aboutUser.get('passwordGroup.confirmPassword')?.touched">password must be six characters or more</span>
+              <span *ngIf="aboutUser.get('passwordGroup')?.errors?.match">Passwords do not match</span>
+            </div>
+
+        </div>
+  
+    </div>
+    <button type="submit" [disabled]="aboutUser.invalid">Update</button>
+  
+
+</form>

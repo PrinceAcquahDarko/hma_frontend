@@ -1,0 +1,23 @@
+<p>patient works!</p>
+
+{{confirmMsg}}
+<div>
+    <!-- resuable component -->
+    <!-- <app-patient-login></app-patient-login>
+     -->
+     <div>
+        <form #form ="ngForm" (ngSubmit)="initializePatient()">
+            <div>
+                <input type="text" name= "key" required placeholder="PatientId" #idField = 'ngModel' [(ngModel)] = "patient.key">
+                <span [hidden]= "idField.valid || idField.untouched"> idField is required </span>
+            </div>
+            <div>
+                <input type="checkbox" name= "nhis"  placeholder="nhis" #nhis = 'ngModel' [(ngModel)] = "patient.nhis">
+            </div>
+
+    
+            <button type="submit" [disabled] = "form.invalid">submit</button>
+        </form>
+    
+    </div>
+</div>
