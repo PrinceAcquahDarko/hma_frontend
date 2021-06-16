@@ -3,13 +3,13 @@
         {{errormsg}}
     </div>
     <div>
-        <input type="email" name="email" required #emailField = 'ngModel' [(ngModel)] = "userCredentials.email">
-        <span [hidden]= "emailField.valid || emailField.untouched"> email is required and must be valid</span>
+        <input type="email" name="email" required #email = 'ngModel' [(ngModel)] = "userCredentials.email">
+        <span [hidden]= "email.valid || email.untouched"> email is required and must be valid</span>
     </div>
 
     <div>
-        <input type="password" name = "password" required #passwordField = 'ngModel' [(ngModel)] = "userCredentials.password">
-        <span [hidden]= "passwordField.valid || passwordField.untouched"> password is required</span>
+        <input type="password" name = "password" required #password = 'ngModel' [(ngModel)] = "userCredentials.password">
+        <span [hidden]= "password.valid || password.untouched"> password is required</span>
     </div>
  
     <button type="submit" [disabled] = "form.invalid">login</button>

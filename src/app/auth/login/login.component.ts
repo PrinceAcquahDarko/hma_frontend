@@ -26,7 +26,10 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser(): void{
+    console.log(this.registerForm?.invalid)
+
     if(this.isValid){
+      console.log('yes its valid from loginUser')
       this.authService.loginUser(this.userCredentials).subscribe(
         (res: IRespons) => {
           if(!!res.auth)

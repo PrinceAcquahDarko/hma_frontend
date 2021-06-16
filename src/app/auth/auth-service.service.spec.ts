@@ -24,7 +24,19 @@ describe('AuthServiceService', () => {
 
     service.registerUser(data).subscribe();
     
-    const req = httpTestingController.expectOne('http://localhost/3000/register')
+    const req = httpTestingController.expectOne('http://localhost:3000/register')
+
+    expect(req).toBeTruthy()
+
+
+  });
+
+  it('should call put when updateUser is called', () => {
+
+    service.updateUser(data).subscribe()
+    
+    const req = httpTestingController.expectOne('http://localhost:3000/register');
+    req.flush({firstname: 'rpince', lastname: 'darko'})
 
     expect(req).toBeTruthy()
 
@@ -35,7 +47,20 @@ describe('AuthServiceService', () => {
 
     service.loginUser(data2).subscribe();
     
-    const req = httpTestingController.expectOne('http://localhost/3000/login')
+    const req = httpTestingController.expectOne('http://localhost:3000/login');
+    req.flush({firstname: 'rpince', lastname: 'darko'})
+
+
+    expect(req).toBeTruthy()
+
+
+  });
+
+  it('should call get when getUser is called', () => {
+
+    service.getUser().subscribe();
+    
+    const req = httpTestingController.expectOne('http://localhost:3000/register')
 
     expect(req).toBeTruthy()
 
