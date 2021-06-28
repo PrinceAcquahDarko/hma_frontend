@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { HelloComponent } from './hello/hello.component';
 import { FrontEndModule } from './frontEnd/front-end.module';
 import { HttpInterceptorModule } from './shared/http-interceptor';
+import { NurseModule } from './nurseDashboard/nurse.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HttpInterceptorModule } from './shared/http-interceptor';
     FrontEndModule,
     RouterModule.forRoot([
       {path: '', component: HelloComponent}
-    ])
+    ]),
+    NurseModule
     
   ],
   providers: [],
