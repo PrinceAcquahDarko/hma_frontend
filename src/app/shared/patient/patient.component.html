@@ -1,6 +1,6 @@
 <p>patient works!</p>
 
-{{confirmMsg}}
+
 <div>
     
      <div>
@@ -9,9 +9,7 @@
                 <input type="text" name= "key" required placeholder="PatientId" #idField = 'ngModel' [(ngModel)] = "patient.key">
                 <span [hidden]= "idField.valid || idField.untouched"> idField is required </span>
             </div>
-            <div>
-                <input type="checkbox" name= "nhis"  placeholder="nhis" #nhis = 'ngModel' [(ngModel)] = "patient.nhis">
-            </div>
+         
 
     
             <button type="submit" [disabled] = "form.invalid">submit</button>
@@ -19,7 +17,3 @@
     
     </div>
 </div>
-
-<!-- <div>
-    <app-patient-shared></app-patient-shared>
-</div> -->

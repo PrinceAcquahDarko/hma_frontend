@@ -7,8 +7,9 @@ import { FrontEndServiceService } from '../front-end-service.service';
   styleUrls: ['./patient.component.css']
 })
 export class PatientComponent implements OnInit {
+
   constructor(private frontservice: FrontEndServiceService) { }
-  confirmMsg =  this.frontservice.key
+  confirmMsg =  this.frontservice.key || ''
   patient  = {
     key : this.confirmMsg,
     nhis: false
@@ -23,7 +24,6 @@ export class PatientComponent implements OnInit {
       (res) => {
         this.confirmMsg = res.message
         this.frontservice.key = '';
-
       }
     )
     

@@ -12,6 +12,7 @@ export class FrontEndServiceService {
   constructor(private http: HttpClient) { }
 
   key: string = ''
+  sharedKey: string = ''
 
   registerPatient(data: IPatientRegister): Observable<any>{
       return this.http.post<IPatientRegister>(this.url + '/patient', data ).pipe(

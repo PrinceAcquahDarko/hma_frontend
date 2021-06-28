@@ -10,6 +10,7 @@ import { RegisterpatientComponent } from './registerpatient/registerpatient.comp
 
 
 
+ 
 @NgModule({
   declarations: [
     FrontEndComponent,

@@ -1,9 +1,0 @@
-<div>
-    <form #form ="ngForm" (ngSubmit)="getPatient()">
-        <input type="text" name= "id" required placeholder="PatientId" #idField = 'ngModel' [(ngModel)] = "patient.id">
-        <span [hidden]= "idField.valid || idField.untouched"> idField is required </span>
-
-        <button type="submit" [disabled] = "form.invalid">submit</button>
-    </form>
-
-</div>

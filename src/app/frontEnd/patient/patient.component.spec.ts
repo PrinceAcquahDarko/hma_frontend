@@ -2,7 +2,7 @@ import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testin
 import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import { of } from 'rxjs';
-import { FrontEndServiceService } from '../front-end-service.service';
+import { FrontEndServiceService } from '../../frontEnd/front-end-service.service';
 
 import { PatientComponent } from './patient.component';
 
