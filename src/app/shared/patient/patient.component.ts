@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FrontEndServiceService } from '../../frontEnd/front-end-service.service';
 
 @Component({
@@ -8,23 +8,32 @@ import { FrontEndServiceService } from '../../frontEnd/front-end-service.service
 })
 export class PatientComponent implements OnInit {
   constructor(private frontservice: FrontEndServiceService) { }
-  confirmMsg =  this.frontservice.key 
+  errormsg: string = ''
   patient  = {
-    key : this.confirmMsg
+    key : ''
 
   }
+
+  @Output() routeEvent = new EventEmitter<boolean>();
+
   ngOnInit(): void {
 
   }
 
  
-  initializePatient(): void{
-    // this.frontservice.initializePatient(this.patient).subscribe(
-    //   (res) => {
-    //     this.confirmMsg = res.message
-    //     this.frontservice.key = '';
-    //   }
-    // )
+  getPatient(): void{
+    this.frontservice.getPatient(this.patient.key).subscribe(
+      (res) => {
+        if(!!res.user){
+          this.routeEvent.emit(true)
+          this.frontservice.currentUser = this.patient.key
+          //we pass a key to your parent for it to redirect
+        }else{
+          this.errormsg = res.message
+          this.routeEvent.emit(false)
+        }
+      }
+    )
     
   }
 

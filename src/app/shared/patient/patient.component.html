@@ -1,10 +1,10 @@
 <p>patient works!</p>
 
-
+{{errormsg}}
 <div>
     
      <div>
-        <form #form ="ngForm" (ngSubmit)="initializePatient()">
+        <form #form ="ngForm" (ngSubmit)="getPatient()">
             <div>
                 <input type="text" name= "key" required placeholder="PatientId" #idField = 'ngModel' [(ngModel)] = "patient.key">
                 <span [hidden]= "idField.valid || idField.untouched"> idField is required </span>

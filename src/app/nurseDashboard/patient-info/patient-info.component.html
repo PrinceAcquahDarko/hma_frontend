@@ -1,0 +1,33 @@
+<p>patient-info works!</p>
+
+
+<form #form ="ngForm" (ngSubmit)="populateData()">
+    <div>
+        {{errororconfirmmsg}}
+    </div>
+    <div>
+        <input type="text" placeholder="temperature" name="temperature" required #temperature = 'ngModel' [(ngModel)] = "appearance.temperature">
+        <span [hidden]= "temperature.valid || temperature.untouched"> temperature is required </span>
+    </div>
+
+    <div>
+        <input type="text" placeholder="bloodpressure" name="bloodpressure" required #bloodpressure = 'ngModel' [(ngModel)] = "appearance.bloodpressure">
+        <span [hidden]= "bloodpressure.valid || bloodpressure.untouched"> bloodpressure is required </span>
+
+    </div>
+
+    <div>
+        <input type="text" placeholder="height" name="height" required #height = 'ngModel' [(ngModel)] = "appearance.height">
+        <span [hidden]= "height.valid || height.untouched"> height is required </span>
+    </div>
+
+    <div>
+        <input type="text" placeholder="weight" name = "weight" required #weight = 'ngModel' [(ngModel)] = "appearance.weight">
+        <span [hidden]= "weight.valid || weight.untouched"> weight is required</span>
+    </div>
+ 
+    <button type="submit" [disabled] = "form.invalid">Submit </button>
+
+
+
+</form>

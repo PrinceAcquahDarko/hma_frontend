@@ -6,6 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { PatientComponent } from './patient/patient.component';
 import { AboutComponent } from './about/about.component';
 import { SharedModule } from '../shared/shared.module';
+import { PatientDetailsComponent } from './patient-details/patient-details.component';
+import { PatientInfoComponent } from './patient-info/patient-info.component';
 
 
 
@@ -14,7 +16,9 @@ import { SharedModule } from '../shared/shared.module';
     InterfaceComponent,
     HomeComponent,
     PatientComponent,
-    AboutComponent
+    AboutComponent,
+    PatientDetailsComponent,
+    PatientInfoComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +35,14 @@ import { SharedModule } from '../shared/shared.module';
             path: 'loginInPatient', component: PatientComponent
           },
           {
+            path: 'patientDetails', component: PatientDetailsComponent
+          },
+          {
             path: 'about', component: AboutComponent
+          },
+          //to be used as a modal
+          {
+            path: 'populate', component: PatientInfoComponent
           }
   
         ]}

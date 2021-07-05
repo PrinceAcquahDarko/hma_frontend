@@ -13,9 +13,11 @@ export class PatientComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
   route(value: boolean){
     if(value)
       this.router.navigate(['../patientDetails'], {relativeTo: this.routes})
   
   }
+
 }
