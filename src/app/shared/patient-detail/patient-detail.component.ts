@@ -10,17 +10,17 @@ export class PatientDetailComponent implements OnInit {
   constructor(private frontendService: FrontEndServiceService) { }
   
   user : any
-
+  
 
   ngOnInit(): void {
     this.getUser();
   }
 
   getUser(): void{
-    console.log(this.frontendService.currentUser)
     this.frontendService.getPatient().subscribe(
-      res => {this.user = res.user
-      console.log(res)}
+      res => {
+        this.user = res.user
+      }
     )
   }
 

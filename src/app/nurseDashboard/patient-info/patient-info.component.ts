@@ -17,8 +17,6 @@ export class PatientInfoComponent implements OnInit {
   constructor(private frontendservice: FrontEndServiceService) { }
   
   ngOnInit(): void {
-    console.log(this.frontendservice.currentUser, 'from null')
-
   }
 
   populateData(){
