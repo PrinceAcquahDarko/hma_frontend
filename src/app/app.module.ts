@@ -10,6 +10,10 @@ import { HelloComponent } from './hello/hello.component';
 import { FrontEndModule } from './frontEnd/front-end.module';
 import { HttpInterceptorModule } from './shared/http-interceptor';
 import { NurseModule } from './nurseDashboard/nurse.module';
+import { LabModule } from './labDashboard/lab.module';
+import { PharmModule } from './pharmDashboard/pharm/pharm.module';
+import { AccountModule } from './accountDashboard/account.module';
+import { AdminModule } from './adminDashboard/admin.module';
 
 @NgModule({
   declarations: [
@@ -29,8 +33,11 @@ import { NurseModule } from './nurseDashboard/nurse.module';
     RouterModule.forRoot([
       {path: '', component: HelloComponent}
     ]),
-    NurseModule
-    
+    NurseModule,
+    LabModule,
+    PharmModule,
+    AdminModule,
+    AccountModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

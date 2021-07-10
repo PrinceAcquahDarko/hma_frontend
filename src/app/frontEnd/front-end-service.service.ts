@@ -45,6 +45,13 @@ export class FrontEndServiceService {
     )
   }
 
+  getAllPatient():Observable<any>{
+    return this.http.get(this.url + '/details').pipe(
+      catchError(this.handleError)
+    )
+    
+  }
+
   handleError(err:HttpErrorResponse){
     let message = '';
 

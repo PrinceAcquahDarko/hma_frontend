@@ -1,0 +1,26 @@
+<p>patient-info works!</p>
+
+
+<form #form ="ngForm" (ngSubmit)="populateData()">
+    <div>
+        {{errororconfirmmsg}}
+    </div>
+   
+    <div>
+        <input type="text" placeholder="getLab" required name="getLab" #getLab = 'ngModel' [(ngModel)] = "labInfo.getLab">
+        <span [hidden]= "getLab.valid || getLab.untouched"> getLab is required </span>
+
+    </div>
+
+    <div>
+        <input type="text" placeholder="labAmount" required name="labAmount" #labAmount = 'ngModel' [(ngModel)] = "labInfo.labAmount">
+        <span [hidden]= "labAmount.valid || labAmount.untouched"> labAmount is required </span>
+
+    </div>
+
+    <button type="submit" [disabled] = "form.invalid">Submit </button>
+
+
+
+</form>
+

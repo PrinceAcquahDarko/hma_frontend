@@ -1,0 +1,26 @@
+<p>patient-info works!</p>
+
+
+<form #form ="ngForm" (ngSubmit)="populateData()">
+    <div>
+        {{errororconfirmmsg}}
+    </div>
+   
+    <div>
+        <input type="text" placeholder="amountPaid" required name="amountPaid" #amountPaid = 'ngModel' [(ngModel)] = "accInfo.amountPaid">
+        <span [hidden]= "amountPaid.valid || amountPaid.untouched"> amountPaid is required </span>
+
+    </div>
+
+    <div>
+        <input type="checkbox" placeholder="paid" required name="paid" #paid = 'ngModel' [(ngModel)] = "accInfo.paid">
+        <span [hidden]= "paid.valid || paid.untouched"> paid is required </span>
+
+    </div>
+
+    <button type="submit" [disabled] = "form.invalid">Submit </button>
+
+
+
+</form>
+
