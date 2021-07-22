@@ -1,0 +1,27 @@
+
+
+
+  .card {
+    margin : auto;
+    width: 60%;
+    text-align: center
+  }
+
+  input:not([type = 'radio']) {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  mat-card-actions > button {
+    width: 40%;
+    padding: 10px;
+    background-color: #4285F4;
+    color: #fff;
+    margin: 10px;
+}
+
+
+.main{
+    margin-top: 10em;
+}

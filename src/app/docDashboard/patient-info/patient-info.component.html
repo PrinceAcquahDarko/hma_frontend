@@ -1,35 +1,41 @@
-<p>patient-info works!</p>
 
-
-<form #form ="ngForm" (ngSubmit)="populateData()">
+<mat-card class="card">
+    <h2> PATIENT'S REPORT FORM</h2>
     <div>
         {{errororconfirmmsg}}
     </div>
-   
-    <div>
-        <input type="text" placeholder="illness" name="illness" #illness = 'ngModel' [(ngModel)] = "doctorsInfo.illness">
-        <!-- <span [hidden]= "bloodpressure.valid || bloodpressure.untouched"> bloodpressure is required </span> -->
+        <mat-card-content>
+            <form #form ="ngForm" (ngSubmit)="populateData()">
+            
+            
+                <div>
+                    <input type="text"matInput placeholder="illness" name="illness" #illness = 'ngModel' [(ngModel)] = "doctorsInfo.illness">
+                    <!-- <span [hidden]= "bloodpressure.valid || bloodpressure.untouched"> bloodpressure is required </span> -->
 
-    </div>
+                </div>
 
-    <div>
-        <input type="text" placeholder="symptoms" name="symptoms"  #symptoms = 'ngModel' [(ngModel)] = "doctorsInfo.symptoms">
-        <!-- <span [hidden]= "height.valid || height.untouched"> height is required </span> -->
-    </div>
+                <div>
+                    <input type="text"matInput placeholder="symptoms" name="symptoms"  #symptoms = 'ngModel' [(ngModel)] = "doctorsInfo.symptoms">
+                    <!-- <span [hidden]= "height.valid || height.untouched"> height is required </span> -->
+                </div>
 
-    <div>
-        <input type="text" placeholder="postDrugs" name = "postDrugs"  #postDrugs = 'ngModel' [(ngModel)] = "doctorsInfo.postDrugs">
-        <!-- <span [hidden]= "weight.valid || weight.untouched"> weight is required</span> -->
-    </div>
+                <div>
+                    <input type="text"matInput placeholder="postDrugs" name = "postDrugs"  #postDrugs = 'ngModel' [(ngModel)] = "doctorsInfo.postDrugs">
+                    <!-- <span [hidden]= "weight.valid || weight.untouched"> weight is required</span> -->
+                </div>
 
-    <div>
-        <input type="text" placeholder="postLab" name = "postLab" #postLab = 'ngModel' [(ngModel)] = "doctorsInfo.postLab">
-        <!-- <span [hidden]= "weight.valid || weight.untouched"> weight is required</span> -->
-    </div>
- 
-    <button type="submit" [disabled] = "form.invalid">Submit </button>
+                <div>
+                    <input type="text"matInput placeholder="postLab" name = "postLab" #postLab = 'ngModel' [(ngModel)] = "doctorsInfo.postLab">
+                    <!-- <span [hidden]= "weight.valid || weight.untouched"> weight is required</span> -->
+                </div>
+                <mat-card-actions>
+                    <button type="submit" [disabled] = "form.invalid">Submit </button>
+
+                </mat-card-actions>
 
 
 
-</form>
+            </form>
+        </mat-card-content>
+</mat-card>
 

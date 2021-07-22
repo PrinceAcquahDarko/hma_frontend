@@ -23,7 +23,8 @@ export class PatientInfoComponent implements OnInit {
     this.frontendservice.populatePatientData(this.appearance).subscribe(
       (res) => {
         this.errororconfirmmsg = res.message
-      }
+      },
+      (err) => this.errororconfirmmsg = err
     )
   }
 }

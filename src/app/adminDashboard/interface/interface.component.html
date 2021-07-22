@@ -1,14 +1,49 @@
-<div>
-    <ul>
-        <li><a [routerLink]="['home']">home</a></li>
-        <li><a [routerLink]="['patient']">logIn Patient</a></li>
-        <li><a [routerLink]="['about']">about</a></li>
-        <li><a [routerLink]="['staff']">patientDetails</a></li>
-        <!-- <li><a [routerLink]="['populate']">interface populate</a></li> -->
-    </ul>
+
+<app-header></app-header>
+
+
+<div class="main">
+    <div class="first">
+        <mat-drawer-container class="example-container">
+            <mat-drawer mode="side" opened>
+                <section class="section1">
+                    <div>
+                        <ul>
+                            <li><a [routerLink]="['home']">home</a></li>
+                            <li><a [routerLink]="['patient']">patientDetails</a></li>
+                            <li><a [routerLink]="['about']">about</a></li>
+                            <li><a [routerLink]="['staff']">staff</a></li>
+                            <li><a [routerLink]="['activePatient']">all patients</a></li>
+                        </ul>
+                    </div>
+                </section>
+            </mat-drawer>
+            <mat-drawer-content>
+                <section class="section2">
+                    <div>
+                        <router-outlet></router-outlet>
+
+                    </div>
+                </section>
+            </mat-drawer-content>
+          
+           
+          </mat-drawer-container>
+    </div>
+
+    <div class="second">
+        <p>Odit delectus sed culNtempore. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae quaerat sequi maxime minus neque quis iste animi enim ea eius mollitia aperiam, ipsum veritatis quisquam qui harum possimus cum cupiditate.</p>
+    </div>
+
+      
+    
+    
+    
+   
 </div>
 
 
 
 
-<router-outlet></router-outlet>
+
+

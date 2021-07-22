@@ -29,6 +29,7 @@ export class FrontEndServiceService {
     )
   }
 
+
   getPatient(data?: string): Observable<any>{
       if(data){
         this.currentUser = data
@@ -47,6 +48,21 @@ export class FrontEndServiceService {
 
   getAllPatient():Observable<any>{
     return this.http.get(this.url + '/details').pipe(
+      catchError(this.handleError)
+    )
+    
+  }
+
+  getactivePatient():Observable<any>{
+    return this.http.get(this.url + '/patient').pipe(
+      catchError(this.handleError)
+    )
+    
+  }
+
+  
+  getAllStaff():Observable<any>{
+    return this.http.get(this.url + '/register/all').pipe(
       catchError(this.handleError)
     )
     

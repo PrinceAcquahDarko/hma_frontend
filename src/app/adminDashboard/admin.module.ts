@@ -7,6 +7,7 @@ import { StaffComponent } from './staff/staff.component';
 import { PatientComponent } from './patient/patient.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { AllPatientsComponent } from './all-patients/all-patients.component';
 
 
 
@@ -16,7 +17,8 @@ import { RouterModule } from '@angular/router';
     InterfaceComponent,
     AboutComponent,
     StaffComponent,
-    PatientComponent
+    PatientComponent,
+    AllPatientsComponent
   ],
   imports: [
     CommonModule,
@@ -37,10 +39,9 @@ import { RouterModule } from '@angular/router';
         {
           path: 'about', component: AboutComponent
         },
-        //we will use a dialog
-        // {
-        //   path: 'populate', component: PatientInfoComponent
-        // }
+        {
+          path: 'activePatient', component: AllPatientsComponent
+        }
 
       ]}
     ]),

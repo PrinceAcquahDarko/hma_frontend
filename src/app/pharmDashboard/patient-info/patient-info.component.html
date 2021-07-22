@@ -1,26 +1,30 @@
-<p>patient-info works!</p>
-
-
-<form #form ="ngForm" (ngSubmit)="populateData()">
+<mat-card class="card">
+    <h2> PATIENT'S REPORT FORM</h2>
     <div>
         {{errororconfirmmsg}}
     </div>
-   
+        <mat-card-content>
+
+<form #form ="ngForm" (ngSubmit)="populateData()">
     <div>
-        <input type="text" placeholder="getDrugs" required name="getDrugs" #getDrugs = 'ngModel' [(ngModel)] = "pharmInfo.getDrugs">
+        <input type="text"matInput placeholder="getDrugs" required name="getDrugs" #getDrugs = 'ngModel' [(ngModel)] = "pharmInfo.getDrugs">
         <span [hidden]= "getDrugs.valid || getDrugs.untouched"> getDrugs is required </span>
 
     </div>
 
     <div>
-        <input type="text" placeholder="pharmAmount" required name="pharmAmount" #pharmAmount = 'ngModel' [(ngModel)] = "pharmInfo.pharmAmount">
+        <input type="text"matInput placeholder="pharmAmount" required name="pharmAmount" #pharmAmount = 'ngModel' [(ngModel)] = "pharmInfo.pharmAmount">
         <span [hidden]= "pharmAmount.valid || pharmAmount.untouched"> pharmAmount is required </span>
 
     </div>
+    <mat-card-actions>
+        <button type="submit" [disabled] = "form.invalid">Submit </button>
 
-    <button type="submit" [disabled] = "form.invalid">Submit </button>
+    </mat-card-actions>
 
 
 
 </form>
+</mat-card-content>
+</mat-card>
 

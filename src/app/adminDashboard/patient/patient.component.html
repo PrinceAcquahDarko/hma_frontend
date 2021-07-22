@@ -4,6 +4,6 @@
 
 <div *ngFor = "let patient of patients$ | async">
     <div>
-        {{patient.key}}
+        {{patient | json}}
     </div>
 </div>

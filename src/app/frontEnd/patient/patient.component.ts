@@ -22,9 +22,11 @@ export class PatientComponent implements OnInit {
   initializePatient(): void{
     this.frontservice.initializePatient(this.patient).subscribe(
       (res) => {
+        console.log(res)
         this.confirmMsg = res.message
         this.frontservice.key = '';
-      }
+      },
+      (err) => this.confirmMsg = err
     )
     
   }

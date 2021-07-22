@@ -32,7 +32,8 @@ export class PatientComponent implements OnInit {
           this.errormsg = res.message
           this.routeEvent.emit(false)
         }
-      }
+      },
+      (err) => this.errormsg = err
     )
     
   }

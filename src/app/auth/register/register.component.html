@@ -1,60 +1,88 @@
-<form [formGroup] = 'registerForm' (ngSubmit) ="registerUser()">
-    <div>
-    {{errormsg}}
-    </div>
-    <div>
-        <input type="text" placeholder="firstname" name="firstname" formControlName="firstname">
+
+<div class="main">
+    <section class="section1">
+    <app-header></app-header>
+
+    </section>
+    <section class="section2">
+      <mat-card class="card">
+        <h2>SIGN UP FORM</h2>
+        <mat-card-content>
+      <form [formGroup] = 'registerForm' (ngSubmit) ="registerUser()">
         <div>
-            <span class="firstname" *ngIf="registerForm.get('firstname')?.errors?.required && registerForm.get('firstname')?.touched">firstname is required</span>
+        {{errormsg}}
         </div>
-    </div>
-
-    <div>
-        <input type="text" placeholder="lastname" name="lastname" formControlName="lastname">
         <div>
-            <span *ngIf="registerForm.get('lastname')?.errors?.required && registerForm.get('lastname')?.touched">lastname is required</span>
-          </div>
-    </div>
-
-    <div>
-        <input type="email" placeholder="email" name="email" formControlName="email">
-        <div>
-            <span *ngIf="registerForm.get('email')?.errors?.required && registerForm.get('email')?.touched">email is required</span>
-          </div>
-          <div>
-            <span *ngIf="registerForm.get('email')?.errors?.email && registerForm.get('email')?.touched">must be a valid email</span>
-          </div>
-    </div>
-
-    <div>
-        <input type="text" placeholder="position" name="position" formControlName="position">
-        <div>
-            <span *ngIf="registerForm.get('position')?.errors?.required && registerForm.get('position')?.touched">position is required</span>
-          </div>
-          
-    </div>
-
-    <div formGroupName="passwordGroup">
-        <div>
-            <input type="password"  placeholder="password" name="password" formControlName="password">
+            <input type="text" matInput placeholder="firstname" name="firstname" formControlName="firstname">
             <div>
-              <span *ngIf="registerForm.get('passwordGroup.password')?.errors?.required && registerForm.get('passwordGroup.password')?.touched">password is required</span>
-              <span *ngIf="registerForm.get('passwordGroup.password')?.errors?.minlength && registerForm.get('passwordGroup.password')?.touched">password must be six characters or more</span>
+                <span class="firstname" *ngIf="registerForm.get('firstname')?.errors?.required && registerForm.get('firstname')?.touched">firstname is required</span>
             </div>
         </div>
-
+    
         <div>
-            <input type="password" placeholder="confirmPassword" name="confirmPassword" formControlName="confirmPassword">
+            <input type="text" placeholder="lastname"matInput name="lastname" formControlName="lastname">
             <div>
-              <span *ngIf="registerForm.get('passwordGroup.confirmPassword')?.errors?.required && registerForm.get('passwordGroup.confirmPassword')?.touched">Confirm password is required</span>
-              <span *ngIf="registerForm.get('passwordGroup.confirmPassword')?.errors?.minlength && registerForm.get('passwordGroup.confirmPassword')?.touched">password must be six characters or more</span>
-              <span *ngIf="registerForm.get('passwordGroup')?.errors?.match">Passwords do not match</span>
-            </div>
-
+                <span *ngIf="registerForm.get('lastname')?.errors?.required && registerForm.get('lastname')?.touched">lastname is required</span>
+              </div>
         </div>
-  
-    </div>
-    <button type="submit" [disabled]="registerForm.invalid">Register</button>
-  
+    
+        <div>
+            <input type="email"matInput placeholder="email" name="email" formControlName="email">
+            <div>
+                <span *ngIf="registerForm.get('email')?.errors?.required && registerForm.get('email')?.touched">email is required</span>
+              </div>
+              <div>
+                <span *ngIf="registerForm.get('email')?.errors?.email && registerForm.get('email')?.touched">must be a valid email</span>
+              </div>
+        </div>
+    
+        <div>
+            <input type="text"matInput placeholder="position" name="position" formControlName="position">
+            <div>
+                <span *ngIf="registerForm.get('position')?.errors?.required && registerForm.get('position')?.touched">position is required</span>
+              </div>
+              
+        </div>
+    
+        <div formGroupName="passwordGroup">
+            <div>
+                <input type="password"matInput  placeholder="password" name="password" formControlName="password">
+                <div>
+                  <span *ngIf="registerForm.get('passwordGroup.password')?.errors?.required && registerForm.get('passwordGroup.password')?.touched">password is required</span>
+                  <span *ngIf="registerForm.get('passwordGroup.password')?.errors?.minlength && registerForm.get('passwordGroup.password')?.touched">password must be six characters or more</span>
+                </div>
+            </div>
+    
+            <div>
+                <input type="password"matInput placeholder="confirmPassword" name="confirmPassword" formControlName="confirmPassword">
+                <div>
+                  <span *ngIf="registerForm.get('passwordGroup.confirmPassword')?.errors?.required && registerForm.get('passwordGroup.confirmPassword')?.touched">Confirm password is required</span>
+                  <span *ngIf="registerForm.get('passwordGroup.confirmPassword')?.errors?.minlength && registerForm.get('passwordGroup.confirmPassword')?.touched">password must be six characters or more</span>
+                  <span *ngIf="registerForm.get('passwordGroup')?.errors?.match">Passwords do not match</span>
+                </div>
+    
+            </div>
+      
+        </div>
+        <mat-card-actions>
+          <button type="submit" [disabled]="registerForm.invalid">Register</button>
 
-</form>
+          </mat-card-actions>
+      
+    
+    </form>
+    </mat-card-content>
+
+  </mat-card>
+    </section>
+    <section class="section3">
+       <!-- <app-header></app-header>
+       -->
+       <mat-toolbar color="primary">
+        <div class="foot">
+            <small>&copy; 2021 myapps.com</small>
+        </div>
+ 
+     </mat-toolbar>
+    </section>
+</div>

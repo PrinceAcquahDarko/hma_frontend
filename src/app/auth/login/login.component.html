@@ -1,3 +1,9 @@
+
+
+<!-- <div>
+    <img src="" alt="">
+</div> -->
+<!-- 
 <form #form ="ngForm" (ngSubmit)="loginUser()">
     <div>
         {{errormsg}}
@@ -16,5 +22,49 @@
 
 
 
-</form>
+</form> -->
 
+<div class="main">
+    <section class="section1">
+        <app-header></app-header>
+        
+    </section>
+<section class="section2">
+    <mat-card class="card">
+        <h2>Login Form</h2>
+        <img class="image" mat-card-image src="https://www.pinclipart.com/picdir/middle/157-1578186_user-profile-default-image-png-clipart.png" alt="User Profile">
+    
+        <mat-card-content>
+            <form #form="ngForm" (ngSubmit)="loginUser()">
+                
+                <div *ngIf = "errormsg">
+                    {{errormsg}}
+                </div>
+                <div>
+                    <input matInput placeholder="pat@example.com" [(ngModel)]="userCredentials.email" required name="email" #usernameField='ngModel' type="email">
+                    <small [hidden] = "usernameField.valid || usernameField.untouched">username is required</small>
+                </div>
+                <div>
+                    <input matInput type="password" placeholder="password" required name="password" #passwordField = 'ngModel' [(ngModel)]="userCredentials.password">
+                    <small [hidden] = "passwordField.valid || passwordField.untouched">password is required</small>
+                </div>
+                <mat-card-actions>
+                    <button type="submit" [disabled] = "form.invalid">login</button>
+                </mat-card-actions>
+            </form>
+        </mat-card-content>
+    
+      </mat-card>
+</section>
+
+<section class="section3">
+    <mat-toolbar color="primary">
+       <div class="foot">
+           <small>&copy; 2021 myapps.com</small>
+       </div>
+
+    </mat-toolbar>
+
+</section>
+
+</div>

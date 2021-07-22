@@ -1,10 +1,10 @@
-<p>patient-info works!</p>
 
-
+<mat-card class="card">
+    <h2> PATIENT'S REPORT FORM</h2>
+    {{errororconfirmmsg}}
+    <mat-card-content>
 <form #form ="ngForm" (ngSubmit)="populateData()">
-    <div>
-        {{errororconfirmmsg}}
-    </div>
+
     <div>
         <input type="text" placeholder="temperature" name="temperature" required #temperature = 'ngModel' [(ngModel)] = "appearance.temperature">
         <span [hidden]= "temperature.valid || temperature.untouched"> temperature is required </span>
@@ -25,9 +25,13 @@
         <input type="text" placeholder="weight" name = "weight" required #weight = 'ngModel' [(ngModel)] = "appearance.weight">
         <span [hidden]= "weight.valid || weight.untouched"> weight is required</span>
     </div>
- 
+ <mat-card-actions>
     <button type="submit" [disabled] = "form.invalid">Submit </button>
+
+ </mat-card-actions>
 
 
 
 </form>
+</mat-card-content>
+</mat-card>

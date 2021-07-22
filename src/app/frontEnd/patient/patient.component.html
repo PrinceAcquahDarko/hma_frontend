@@ -1,25 +1,31 @@
-<p>patient works!</p>
 
-{{confirmMsg}}
-<div>
-    
-     <div>
+
+<div class="main">
+    <mat-card class="card">
+        <h2>INITIALIZE PATIENT FORM</h2>
+    {{confirmMsg}}
+
+        <mat-card-content>
+   
         <form #form ="ngForm" (ngSubmit)="initializePatient()">
             <div>
-                <input type="text" name= "key" required placeholder="PatientId" #idField = 'ngModel' [(ngModel)] = "patient.key">
+                <input type="text"matInput name= "key" required placeholder="PatientId" #idField = 'ngModel' [(ngModel)] = "patient.key">
                 <span [hidden]= "idField.valid || idField.untouched"> idField is required </span>
             </div>
             <div>
                 <input type="checkbox" name= "nhis"  placeholder="nhis" #nhis = 'ngModel' [(ngModel)] = "patient.nhis">
             </div>
 
-    
+            <mat-card-actions>
             <button type="submit" [disabled] = "form.invalid">submit</button>
+
+            </mat-card-actions>
         </form>
+
+        </mat-card-content>
+        </mat-card>
     
-    </div>
+
 </div>
 
-<!-- <div>
-    <app-patient-shared></app-patient-shared>
-</div> -->
+

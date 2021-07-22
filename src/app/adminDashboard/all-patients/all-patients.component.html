@@ -1,0 +1,8 @@
+<p>all-patients works!</p>
+
+
+<div *ngFor = "let patient of getActivePatients$ | async">
+    <div>
+        {{patient | json}}
+    </div>
+</div>

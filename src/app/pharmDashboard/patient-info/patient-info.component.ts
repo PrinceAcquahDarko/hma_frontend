@@ -11,7 +11,7 @@ export class PatientInfoComponent implements OnInit {
 
   pharmInfo = {
       getDrugs: '',
-      pharmAmount: 0
+      pharmAmount: ''
   }
   constructor(private frontendservice: FrontEndServiceService) { }
   
@@ -22,7 +22,8 @@ export class PatientInfoComponent implements OnInit {
     this.frontendservice.populatePatientData(this.pharmInfo).subscribe(
       (res) => {
         this.errororconfirmmsg = res.message
-      }
+      },
+      (err) => this.errororconfirmmsg = err
     )
   }
 

@@ -1,26 +1,36 @@
-<p>patient-info works!</p>
+<div class="main">
 
-
-<form #form ="ngForm" (ngSubmit)="populateData()">
-    <div>
-        {{errororconfirmmsg}}
-    </div>
-   
-    <div>
-        <input type="text" placeholder="getLab" required name="getLab" #getLab = 'ngModel' [(ngModel)] = "labInfo.getLab">
-        <span [hidden]= "getLab.valid || getLab.untouched"> getLab is required </span>
-
-    </div>
-
-    <div>
-        <input type="text" placeholder="labAmount" required name="labAmount" #labAmount = 'ngModel' [(ngModel)] = "labInfo.labAmount">
-        <span [hidden]= "labAmount.valid || labAmount.untouched"> labAmount is required </span>
-
-    </div>
-
-    <button type="submit" [disabled] = "form.invalid">Submit </button>
-
-
-
-</form>
+    <mat-card class="card">
+        <h2> PATIENT'S REPORT FORM</h2>
+        <div>
+            {{errororconfirmmsg}}
+        </div>
+        <mat-card-content>
+    
+    
+        <form #form ="ngForm" (ngSubmit)="populateData()">
+            
+        
+            <div>
+                <input type="text"matInput  placeholder="getLab" required name="getLab" #getLab = 'ngModel' [(ngModel)] = "labInfo.getLab">
+                <span [hidden]= "getLab.valid || getLab.untouched"> getLab is required </span>
+    
+            </div>
+    
+            <div>
+                <input type="text" matInput placeholder="labAmount" required name="labAmount" #labAmount = 'ngModel' [(ngModel)] = "labInfo.labAmount">
+                <span [hidden]= "labAmount.valid || labAmount.untouched"> labAmount is required </span>
+    
+            </div>
+            <mat-card-actions>
+             <button type="submit" [disabled] = "form.invalid">Submit </button>
+            </mat-card-actions>
+    
+    
+    
+        </form>
+    </mat-card-content>
+    </mat-card>
+    
+</div>
 

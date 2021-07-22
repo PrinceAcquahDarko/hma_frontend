@@ -1,23 +1,27 @@
+
 <form [formGroup] = 'aboutUser' (ngSubmit) ="updateUser()">
+  <mat-card class="card">
+    <h2>ABOUT FORM</h2>
+    <mat-card-content>
     <div>
     {{errormsg}}
     </div>
     <div>
-        <input type="text" placeholder="firstname" name="firstname" formControlName="firstname">
+        <input type="text"matInput placeholder="firstname" name="firstname" formControlName="firstname">
         <div>
             <span class="firstname" *ngIf="aboutUser.get('firstname')?.errors?.required && aboutUser.get('firstname')?.touched">firstname is required</span>
         </div>
     </div>
 
     <div>
-        <input type="text" placeholder="lastname" name="lastname" formControlName="lastname">
+        <input type="text"matInput placeholder="lastname" name="lastname" formControlName="lastname">
         <div>
             <span *ngIf="aboutUser.get('lastname')?.errors?.required && aboutUser.get('lastname')?.touched">lastname is required</span>
           </div>
     </div>
 
     <div>
-        <input type="email" placeholder="email" name="email" formControlName="email">
+        <input type="email"matInput placeholder="email" name="email" formControlName="email">
         <div>
             <span *ngIf="aboutUser.get('email')?.errors?.required && aboutUser.get('email')?.touched">email is required</span>
           </div>
@@ -36,7 +40,7 @@
 
     <div formGroupName="passwordGroup">
         <div>
-            <input type="password"  placeholder="password" name="password" formControlName="password">
+            <input type="password"matInput  placeholder="password" name="password" formControlName="password">
             <div>
               <span *ngIf="aboutUser.get('passwordGroup.password')?.errors?.required && aboutUser.get('passwordGroup.password')?.touched">password is required</span>
               <span *ngIf="aboutUser.get('passwordGroup.password')?.errors?.minlength && aboutUser.get('passwordGroup.password')?.touched">password must be six characters or more</span>
@@ -44,7 +48,7 @@
         </div>
 
         <div>
-            <input type="password" placeholder="confirmPassword" name="confirmPassword" formControlName="confirmPassword">
+            <input type="password"matInput placeholder="confirmPassword" name="confirmPassword" formControlName="confirmPassword">
             <div>
               <span *ngIf="aboutUser.get('passwordGroup.confirmPassword')?.errors?.required && aboutUser.get('passwordGroup.confirmPassword')?.touched">Confirm password is required</span>
               <span *ngIf="aboutUser.get('passwordGroup.confirmPassword')?.errors?.minlength && aboutUser.get('passwordGroup.confirmPassword')?.touched">password must be six characters or more</span>
@@ -54,7 +58,12 @@
         </div>
   
     </div>
+    <mat-card-actions>
     <button type="submit" [disabled]="aboutUser.invalid">Update</button>
+
+    </mat-card-actions>
+    </mat-card-content>
+    </mat-card>
   
 
 </form>

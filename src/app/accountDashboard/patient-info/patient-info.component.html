@@ -1,13 +1,13 @@
-<p>patient-info works!</p>
-
-
-<form #form ="ngForm" (ngSubmit)="populateData()">
+<mat-card class="card">
+    <h2> PATIENT'S REPORT FORM</h2>
     <div>
         {{errororconfirmmsg}}
     </div>
+        <mat-card-content>
+            <form #form ="ngForm" (ngSubmit)="populateData()">
    
     <div>
-        <input type="text" placeholder="amountPaid" required name="amountPaid" #amountPaid = 'ngModel' [(ngModel)] = "accInfo.amountPaid">
+        <input type="text"matInput placeholder="amountPaid" required name="amountPaid" #amountPaid = 'ngModel' [(ngModel)] = "accInfo.amountPaid">
         <span [hidden]= "amountPaid.valid || amountPaid.untouched"> amountPaid is required </span>
 
     </div>
@@ -17,10 +17,15 @@
         <span [hidden]= "paid.valid || paid.untouched"> paid is required </span>
 
     </div>
+    <mat-card-actions>
+        <button type="submit" [disabled] = "form.invalid">Submit </button>
 
-    <button type="submit" [disabled] = "form.invalid">Submit </button>
+    </mat-card-actions>
 
 
 
-</form>
+            </form>
+
+        </mat-card-content>
+    </mat-card>
 

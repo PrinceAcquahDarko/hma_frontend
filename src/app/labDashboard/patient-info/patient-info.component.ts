@@ -10,7 +10,7 @@ export class PatientInfoComponent implements OnInit {
   errororconfirmmsg = ''
   labInfo = {
     getLab: '',
-    labAmount: 0
+    labAmount: ''
   }
   constructor(private frontendservice: FrontEndServiceService) { }
 

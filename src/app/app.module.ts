@@ -14,6 +14,8 @@ import { LabModule } from './labDashboard/lab.module';
 import { PharmModule } from './pharmDashboard/pharm/pharm.module';
 import { AccountModule } from './accountDashboard/account.module';
 import { AdminModule } from './adminDashboard/admin.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { AdminModule } from './adminDashboard/admin.module';
     LabModule,
     PharmModule,
     AdminModule,
-    AccountModule 
+    AccountModule,
+    BrowserAnimationsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

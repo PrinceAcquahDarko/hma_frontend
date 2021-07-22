@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent} from './login/login.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -18,13 +19,17 @@ import { LoginComponent} from './login/login.component';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild([
+    // {
+    //     path: '', redirectTo: 'login', pathMatch: 'full'
+    // },
       {
         path: 'register', component: RegisterComponent
       },
       {
         path: 'login', component: LoginComponent
       }
-    ])
+    ]),
+    SharedModule
   ]
 })
 export class AuthModule { }
