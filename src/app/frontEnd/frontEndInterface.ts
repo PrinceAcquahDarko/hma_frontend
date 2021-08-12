@@ -20,3 +20,10 @@ export interface IInitialize {
     done?: boolean,
     payment?: number
 }
+
+export interface IStaff {
+    firstname: string,
+    lasname: string,
+    position: string,
+    email: string
+}

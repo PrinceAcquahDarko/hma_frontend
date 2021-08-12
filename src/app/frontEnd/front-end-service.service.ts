@@ -12,6 +12,7 @@ export class FrontEndServiceService {
   url = "http://localhost:3000"
   constructor(private http: HttpClient) { }
 
+  data: any;
   key: string = ''
   user: any;
   currentUser: string = ''

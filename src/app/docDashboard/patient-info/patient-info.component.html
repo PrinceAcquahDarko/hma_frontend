@@ -1,41 +1,54 @@
+<div >
+    <mat-card class="card ">
+        <h2> PATIENT'S REPORT FORM</h2>
+        <div>
+            {{errororconfirmmsg}}
+        </div>
+            <mat-card-content>
+                <form #form ="ngForm" (ngSubmit)="populateData()">
+                    <div>
+                        <p>(separate with comma if multiple)</p>
+                    </div>
+                    <div>
+                        <!-- <input type="text"matInput placeholder="symptoms" name="symptoms"  #symptoms = 'ngModel' [(ngModel)] = "doctorsInfo.symptoms"> -->
+                    <textarea placeholder="symptoms" name="symptoms" id="symptoms" cols="37" rows="4" #symptoms = 'ngModel' [(ngModel)] = "doctorsInfo.symptoms"></textarea>
+                        
+                    </div>
+                    <div>
 
-<mat-card class="card">
-    <h2> PATIENT'S REPORT FORM</h2>
-    <div>
-        {{errororconfirmmsg}}
-    </div>
-        <mat-card-content>
-            <form #form ="ngForm" (ngSubmit)="populateData()">
-            
-            
-                <div>
-                    <input type="text"matInput placeholder="illness" name="illness" #illness = 'ngModel' [(ngModel)] = "doctorsInfo.illness">
-                    <!-- <span [hidden]= "bloodpressure.valid || bloodpressure.untouched"> bloodpressure is required </span> -->
+                        <div>
+                            <!-- <input type="text"matInput placeholder="postLab" name = "postLab" #postLab = 'ngModel' [(ngModel)] = "doctorsInfo.postLab"> -->
+                           
+                    <textarea placeholder="postLab" name="postLab" id="postLab" cols="37" rows="4" #postLab = 'ngModel' [(ngModel)] = "doctorsInfo.postLab"></textarea>
+                           
+                        </div>
+                        <!-- <input type="text"matInput placeholder="illness" name="illness" #illness = 'ngModel' [(ngModel)] = "doctorsInfo.illness"> -->
+                    <textarea placeholder="illness" name="illness" id="illness" cols="37" rows="4" #illness = 'ngModel' [(ngModel)] = "doctorsInfo.illness"></textarea>
 
-                </div>
+    
+                    </div>
 
-                <div>
-                    <input type="text"matInput placeholder="symptoms" name="symptoms"  #symptoms = 'ngModel' [(ngModel)] = "doctorsInfo.symptoms">
-                    <!-- <span [hidden]= "height.valid || height.untouched"> height is required </span> -->
-                </div>
+    
+                  
+    
+                    <div>
+                        <!-- <input type="text"matInput placeholder="postDrugs" name = "postDrugs"  #postDrugs = 'ngModel' [(ngModel)] = "doctorsInfo.postDrugs"> -->
+                       
+                    <textarea placeholder="postDrugs" name="postDrugs" id="postDrugs" cols="37" rows="4" #postDrugs = 'ngModel' [(ngModel)] = "doctorsInfo.postDrugs"></textarea>
+                       
+                    </div>
+    
+                    
+                    <mat-card-actions>
+                        <button type="submit" [disabled] = "form.invalid">Submit </button>
+    
+                    </mat-card-actions>
+    
+    
+    
+                </form>
+            </mat-card-content>
+    </mat-card>
+</div>
 
-                <div>
-                    <input type="text"matInput placeholder="postDrugs" name = "postDrugs"  #postDrugs = 'ngModel' [(ngModel)] = "doctorsInfo.postDrugs">
-                    <!-- <span [hidden]= "weight.valid || weight.untouched"> weight is required</span> -->
-                </div>
-
-                <div>
-                    <input type="text"matInput placeholder="postLab" name = "postLab" #postLab = 'ngModel' [(ngModel)] = "doctorsInfo.postLab">
-                    <!-- <span [hidden]= "weight.valid || weight.untouched"> weight is required</span> -->
-                </div>
-                <mat-card-actions>
-                    <button type="submit" [disabled] = "form.invalid">Submit </button>
-
-                </mat-card-actions>
-
-
-
-            </form>
-        </mat-card-content>
-</mat-card>
 

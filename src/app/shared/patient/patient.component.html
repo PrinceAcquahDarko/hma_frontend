@@ -1,20 +1,23 @@
 <div class="main">
-<mat-card class="card">
-    <h2>LOG IN PATIENT FORM</h2>
-        {{errormsg}}
-    <mat-card-content>
-        <form #form ="ngForm" (ngSubmit)="getPatient()">
-            <div>
-                <input type="text" matInput name= "key" required placeholder="PatientId" #idField = 'ngModel' [(ngModel)] = "patient.key">
-                <span [hidden]= "idField.valid || idField.untouched"> idField is required </span>
-            </div>
-            <mat-card-actions>
-                 <button type="submit" [disabled] = "form.invalid">submit</button>
-            </mat-card-actions>
+    <div class="card">
+        <mat-card>
+            <h2>LOG IN PATIENT FORM</h2>
+                {{errormsg}}
+            <mat-card-content>
+                <form #form ="ngForm" (ngSubmit)="getPatient()">
+                    <div>
+                        <input type="text" matInput name= "key" required placeholder="PatientId" #idField = 'ngModel' [(ngModel)] = "patient.key">
+                        <small [hidden]= "idField.valid || idField.untouched"> idField is required </small>
+                    </div>
+                    <mat-card-actions>
+                         <button type="submit" [disabled] = "form.invalid">submit</button>
+                    </mat-card-actions>
+        
+                </form>
+                </mat-card-content>
+                </mat-card>
+    </div>
 
-        </form>
-        </mat-card-content>
-        </mat-card>
     
     </div>
 

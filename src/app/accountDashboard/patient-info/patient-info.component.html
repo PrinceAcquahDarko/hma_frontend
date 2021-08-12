@@ -1,31 +1,36 @@
-<mat-card class="card">
-    <h2> PATIENT'S REPORT FORM</h2>
-    <div>
-        {{errororconfirmmsg}}
-    </div>
-        <mat-card-content>
-            <form #form ="ngForm" (ngSubmit)="populateData()">
-   
-    <div>
-        <input type="text"matInput placeholder="amountPaid" required name="amountPaid" #amountPaid = 'ngModel' [(ngModel)] = "accInfo.amountPaid">
-        <span [hidden]= "amountPaid.valid || amountPaid.untouched"> amountPaid is required </span>
+<div class="main">
+    <mat-card class="card">
+        <h2> PATIENT'S REPORT FORM</h2>
+        <div>
+            {{errororconfirmmsg}}
+        </div>
+            <mat-card-content>
+                <form #form ="ngForm" (ngSubmit)="populateData()">
+       
+        <div>
+            <input type="text"matInput placeholder="amountPaid" required name="amountPaid" #amountPaid = 'ngModel' [(ngModel)] = "accInfo.amountPaid">
+            <span [hidden]= "amountPaid.valid || amountPaid.untouched"> amountPaid is required </span>
+    
+        </div>
+    
+        <div class="example-section">
+            <mat-checkbox  class="example-margin" name="paid" #paid = 'ngModel' [(ngModel)] = "accInfo.paid">Paid</mat-checkbox>
 
-    </div>
+            <!-- <input type="checkbox" placeholder="paid" required name="paid" #paid = 'ngModel' [(ngModel)] = "accInfo.paid"> -->
 
-    <div>
-        <input type="checkbox" placeholder="paid" required name="paid" #paid = 'ngModel' [(ngModel)] = "accInfo.paid">
-        <span [hidden]= "paid.valid || paid.untouched"> paid is required </span>
-
-    </div>
-    <mat-card-actions>
-        <button type="submit" [disabled] = "form.invalid">Submit </button>
-
-    </mat-card-actions>
-
-
-
-            </form>
-
-        </mat-card-content>
-    </mat-card>
+            
+    
+        </div>
+        <mat-card-actions>
+            <button type="submit" [disabled] = "form.invalid">Submit </button>
+    
+        </mat-card-actions>
+    
+    
+    
+                </form>
+    
+            </mat-card-content>
+        </mat-card>
+</div>
 

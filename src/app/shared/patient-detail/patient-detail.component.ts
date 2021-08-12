@@ -9,9 +9,9 @@ import { FrontEndServiceService } from 'src/app/frontEnd/front-end-service.servi
 export class PatientDetailComponent implements OnInit {
   constructor(private frontendService: FrontEndServiceService) { }
   
-  user : any
+  user: any
+  hello = this.frontendService.data
   
-
   ngOnInit(): void {
     this.getUser();
   }

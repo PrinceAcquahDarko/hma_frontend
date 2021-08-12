@@ -2,16 +2,21 @@
 
 
   .card {
-    margin : auto;
-    width: 60%;
-    text-align: center
+    margin :  auto;
+    width: 50%;
+    height: 50px;
+    text-align: center;
+    padding-top: 15em;
   }
+    
 
   input:not([type = 'radio']) {
     width: 80%;
     padding: 10px;
     margin: 10px;
   }
+
+ 
 
   mat-card-actions > button {
     width: 40%;
@@ -21,7 +26,10 @@
     margin: 10px;
 }
 
-
 .main{
-    margin-top: 10em;
+  width:100%;
+  height: 50%;
+  
 }
+
+

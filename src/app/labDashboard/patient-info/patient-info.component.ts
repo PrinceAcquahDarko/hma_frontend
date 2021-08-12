@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { FrontEndServiceService } from 'src/app/frontEnd/front-end-service.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class PatientInfoComponent implements OnInit {
     getLab: '',
     labAmount: ''
   }
-  constructor(private frontendservice: FrontEndServiceService) { }
+  constructor(private frontendservice: FrontEndServiceService, public dialogRef: MatDialogRef<PatientInfoComponent>) { }
 
   ngOnInit(): void {
   }
@@ -20,9 +21,21 @@ export class PatientInfoComponent implements OnInit {
   populateData(): void{
     this.frontendservice.populatePatientData(this.labInfo).subscribe(
       (res) => {
-        this.errororconfirmmsg = res.message
+        this.errororconfirmmsg = res.message;
+        this.closeDialog()
+      },
+      (err) => {
+        this.errororconfirmmsg = err
       }
     )
+  }
+
+  closeDialog(): void{
+    this.dialogRef.close({
+      event: 'close'
+    })
+
+    this.frontendservice.data = this.labInfo
   }
 
 }

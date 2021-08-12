@@ -12,7 +12,7 @@ export class PatientInfoComponent implements OnInit {
   accInfo = {
     amountPaid: 0,
     paid: false,
-    done: true
+    done: false
   }
   constructor(private frontendservice: FrontEndServiceService) { }
 
@@ -20,6 +20,9 @@ export class PatientInfoComponent implements OnInit {
   }
 
   populateData(): void{
+    if(this.accInfo.paid){
+      this.accInfo.done = true
+    }
     this.frontendservice.populatePatientData(this.accInfo).subscribe(
       (res) => {
         this.errororconfirmmsg = res.message

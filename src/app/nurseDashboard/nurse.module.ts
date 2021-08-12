@@ -39,11 +39,11 @@ import { PatientInfoComponent } from './patient-info/patient-info.component';
           },
           {
             path: 'about', component: AboutComponent
-          },
-          //to be used as a modal
-          {
-            path: 'populate', component: PatientInfoComponent
           }
+          //to be used as a modal
+          // {
+          //   path: 'populate', component: PatientInfoComponent
+          // }
   
         ]}
 

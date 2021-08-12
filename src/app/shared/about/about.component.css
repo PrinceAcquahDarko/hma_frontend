@@ -1,9 +1,12 @@
+form{
+  padding-top: 15em;
 
+}
   .card {
     margin : auto;
-    width: 80%;
-    /* height: 100%; */
-    text-align: center
+    width: 50%;
+    text-align: center;
+
   }
 
   input:not([type = 'radio']) {

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { PatientInfoComponent } from '../patient-info/patient-info.component';
 
 @Component({
   selector: 'app-patient-details',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatientDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  populateInfo(): void{
+    const dialogRef = this.dialog.open(PatientInfoComponent, {
+      width: '50%',
+      height: '70%',
+      // disableClose: true
+  
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+  
+    });
   }
 
 }

@@ -1,0 +1,37 @@
+table {
+    width: 100%;
+  }
+mat-icon{
+  color: #6666ff;
+
+}
+
+main > div {
+    width: 60%;
+    margin: auto;
+    color: #fff;
+    text-align: center;
+    padding:2px;
+    background: #6666ff;
+
+}
+
+
+
+main{
+    padding-top: 3em;
+}
+
+.search{
+    width: 90%;
+    background: #fff;
+    margin: 10px auto 10px auto;
+
+
+
+  }
+
+  mat-form-field{
+      width: 100%;
+  }
+

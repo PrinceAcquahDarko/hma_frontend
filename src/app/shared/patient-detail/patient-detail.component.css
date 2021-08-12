@@ -1,0 +1,39 @@
+
+.divider{
+    background-color: #e6e6e6;
+    padding: 40px 3px 40px 3px;
+}
+
+.secondpart{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.info{
+    border-radius: 20px;
+    width: 100%;
+    margin-top: 2em;
+    background: #fff;
+    color: rgba(0,0,0,.87);
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+main{
+
+    margin-top: 40px;
+}
+
+img{
+    width: 40px;
+}
+
+mat-icon{
+    color: #6666ff;
+    font-size: 50px;
+    height: -webkit-fill-available;
+}

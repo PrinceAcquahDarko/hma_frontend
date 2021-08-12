@@ -1,7 +1,10 @@
 
 
-<app-header></app-header>
-
+<div class="header">
+    <div>
+        <app-header></app-header>
+    </div>
+</div>
 
 <div class="main">
     <div class="first">
@@ -10,11 +13,12 @@
                 <section class="section1">
                     <div>
                         <ul>
-                            <li><a [routerLink]="['home']">home</a></li>
-                            <li><a [routerLink]="['loginInPatient']">logIn Patient</a></li>
-                            <li><a [routerLink]="['about']">about</a></li>
-                            <li><a [routerLink]="['patientDetails']">patient info</a></li>
+                            <li><a [routerLink]="['home']"><mat-icon>home</mat-icon></a></li>
+                            <li><a [routerLink]="['loginInPatient']"><mat-icon>edit</mat-icon></a></li>
+                            <li><a [routerLink]="['patientDetails']"><mat-icon>update</mat-icon></a></li>
+                            <li><a [routerLink]="['about']"><mat-icon>person</mat-icon></a></li>
                         </ul>
+
                     </div>
                 </section>
             </mat-drawer>
@@ -32,8 +36,93 @@
     </div>
 
     <div class="second">
-        <p>Odit delectus sed culNtempore. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae quaerat sequi maxime minus neque quis iste animi enim ea eius mollitia aperiam, ipsum veritatis quisquam qui harum possimus cum cupiditate.</p>
+      <div class="wrapper">
+        <p>Recent Patients</p>
+        <div>
+            <mat-card class="example-card">
+              <mat-card-content>
+                <mat-icon>person</mat-icon>
+                  <div>
+                    <h3>Dr Amanda Atunah</h3>
+                    <p>
+                        lokui458
+                    </p>
+                  </div>
+               
+  
+  
+  
+              </mat-card-content>
+             
+            </mat-card>
+          </div>
+          <div>
+            <mat-card class="example-card">
+                <mat-card-content>
+                    <mat-icon>person</mat-icon>
+                      <div>
+                        <h3>Dr Amanda Atunah</h3>
+                        <p>
+                            lokui458
+                        </p>
+                      </div>
+                   
+      
+      
+      
+                  </mat-card-content>
+             
+            </mat-card>
+          </div>
+          <div>
+            <mat-card class="example-card">
+                <mat-card-content>
+                    <mat-icon>person</mat-icon>
+                      <div>
+                        <h3>Dr Amanda Atunah</h3>
+                        <p>
+                            lokui458
+                        </p>
+                      </div>
+                   
+      
+      
+      
+                  </mat-card-content>
+             
+            </mat-card>
+          </div>
+
+
+
+          <div class="currentPatient">
+            <p>current Patient</p>
+            <div>
+                <mat-card class="example-card2">
+                  <mat-card-content>
+                    <mat-icon >person</mat-icon>
+                      <div>
+                        <h3>Dr Amanda Atunah</h3>
+                        <p>
+                            lokui458
+                        </p>
+                      </div>
+                     
+                    </mat-card-content>
+             
+                </mat-card>
+              </div>
+            </div>
+         
+               
+  
+  
+  
+              
+        
     </div>
+      </div>
+ 
 
       
     
@@ -41,6 +130,17 @@
     
    
 </div>
+
+<div class="header">
+  <div class="bottom">
+      <app-header></app-header>
+  </div>
+</div>
+
+
+
+
+
 
 
 

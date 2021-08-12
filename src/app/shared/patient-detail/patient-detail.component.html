@@ -1,31 +1,168 @@
-<p>patient-detail works!</p>
 
 
-<!-- {{user.appearance?.type?.temperature}}
-{{user.appearance?.type?.weight}}
-{{user.appearance?.type?.height}}
-{{user.appearance?.type?.bloodLevel}}
-{{user.getDrugs}}
-{{user.postDrugs}}
-{{user.postLab}}
-{{user.getLab}}
-{{user.}} -->
-<div *ngIf="!user">
-    <p>hello we lost the current patient please enter patient key once more from the login tab</p>
-</div>
+<main>
+    <div *ngIf="!user">
+        <p>hello we lost the current patient please enter patient key once more from the login tab</p>
+    </div>
+    
+    <!-- {{user | json}} -->
+    
+    <div *ngIf="user">
+        <section class="info">
+            <div class="secondpart">
+                <img src="https://img.icons8.com/nolan/48/temperature.png"/>
+        
+                <div>
+                    <h3>temperature</h3>
+                    <h4>{{user.temperature || hello.temperature}}</h4>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="secondpart">
+                <img src="https://img.icons8.com/color/48/4a90e2/weight-kg.png"/>
+        
+                <div>
+                    <h3>weight</h3>
+                    <h4>{{user.weight}}</h4>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="secondpart">
+                <img src="https://img.icons8.com/color/48/4a90e2/height.png"/>
+        
+                <div>
+                    <h3>height</h3>
+                    <h4>{{user.height}}</h4>
+                </div>
+            </div>
+        </section>
 
-{{user | json}}
 
-<!-- {{user.appearance?.type?.temperature}}
-{{user.appearance?.type?.weight}}
-{{user.appearance?.type?.height}}
-{{user.appearance?.type?.bloodLevel}} -->
+        <!-- second part here -->
+        <section class="info">
+            <div class="secondpart">
+                <img src="https://img.icons8.com/bubbles/50/4a90e2/sneezing-in-a-tissue.png"/>
+        
+                <div>
+                    <h3>symptoms</h3>
+                    <h4>{{user.postDrugs}}</h4>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="secondpart">
+                <img src="https://img.icons8.com/doodle/48/4a90e2/illness.png"/>
+        
+                <div>
+                    <h3>illness</h3>
+                    <h4>{{user.illness}}</h4>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="secondpart">
+              <mat-icon>person</mat-icon>
+        
+                <div>
+                    <h3>special treatment</h3>
+                    <h4>{{user.height}}</h4>
+                </div>
+            </div>
+        </section>
 
-<!-- {{user.postDrugs}}
-{{user.postLab}}
-{{user.getLab}} -->
+        <!-- third part -->
 
-hey everyone is mad
+        <section class="info">
+            <div class="secondpart">
+                <img src="https://img.icons8.com/ios-filled/50/4a90e2/test-results.png"/>
+        
+                <div>
+                    <h3>lab test</h3>
+                    <h4>{{user.postLab || hello.postLab}}</h4>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="secondpart">
+                <img src="https://img.icons8.com/ios-filled/50/4a90e2/test-results.png"/>
+        
+                <div>
+                    <h3>lab Results</h3>
+                    <h4>{{user?.getLab|| hello?.getLab}}</h4>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="secondpart">
+                <img src="https://img.icons8.com/ios-filled/50/4a90e2/capsule.png"/>
+        
+                <div>
+                    <h3>Drugs</h3>
+                    <h4>{{user.height}}</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- fourth part -->
+        <section class="info">
+            <div class="secondpart">
+              <mat-icon>person</mat-icon>
+        
+                <div>
+                    <h3>temperature</h3>
+                    <h4>{{user.temperature}}</h4>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="secondpart">
+              <mat-icon>person</mat-icon>
+        
+                <div>
+                    <h3>weight</h3>
+                    <h4>{{user.weight}}</h4>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="secondpart">
+              <mat-icon>person</mat-icon>
+        
+                <div>
+                    <h3>height</h3>
+                    <h4>{{user.height}}</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- fifth part -->
+        <!-- <section class="info">
+            <div class="secondpart">
+              <mat-icon>person</mat-icon>
+        
+                <div>
+                    <h3>temperature</h3>
+                    <h4>{{user.temperature}}</h4>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="secondpart">
+              <mat-icon>person</mat-icon>
+        
+                <div>
+                    <h3>weight</h3>
+                    <h4>{{user.weight}}</h4>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="secondpart">
+              <mat-icon>person</mat-icon>
+        
+                <div>
+                    <h3>height</h3>
+                    <h4>{{user.height}}</h4>
+                </div>
+            </div>
+        </section> -->
+    </div>
+    
+</main>
+
+
 
 
 

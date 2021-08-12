@@ -1,44 +1,49 @@
-<mat-card class="card">
-    <h2>REGISTER PATIENT FORM</h2>
-    <mat-card-content>
-<form [formGroup] = 'registerPatientForm' (ngSubmit) ="registerPatient()">
-    <div>
-    {{errormsg}}
-    </div>
-    <div>
-        <input type="text" matInput  placeholder="firstname" name="firstname" formControlName="firstname">
-        <div>
-            <span class="firstname" *ngIf="registerPatientForm.get('firstname')?.errors?.required && registerPatientForm.get('firstname')?.touched">firstname is required</span>
-        </div>
-    </div>
-
-    <div>
-        <input type="text"  matInput placeholder="lastname" name="lastname" formControlName="lastname">
-        <div>
-            <span *ngIf="registerPatientForm.get('lastname')?.errors?.required && registerPatientForm.get('lastname')?.touched">lastname is required</span>
-          </div>
-    </div>
-
-    <div>
-        <input type="number"  matInput placeholder="contact" name="contact" formControlName="contact">
-        <div>
-            <span *ngIf="registerPatientForm.get('contact')?.errors?.required && registerPatientForm.get('contact')?.touched">contact is required</span>
-          </div>
-   
-    </div>
-
-    <div>
-        <input type="text" matInput  placeholder="address" name="address" formControlName="address">
-        <div>
-            <span *ngIf="registerPatientForm.get('address')?.errors?.required && registerPatientForm.get('address')?.touched">address is required</span>
-          </div>
+<div class="middle">
+    <div class="main">
+        <mat-card class="card">
+            <h2>REGISTER PATIENT FORM</h2>
+            <mat-card-content>
+        <form [formGroup] = 'registerPatientForm' (ngSubmit) ="registerPatient()">
+            <div>
+            {{errormsg}}
+            </div>
+            <div>
+                <input type="text" matInput  placeholder="firstname" name="firstname" formControlName="firstname">
+                <div>
+                    <span class="firstname" *ngIf="registerPatientForm.get('firstname')?.errors?.required && registerPatientForm.get('firstname')?.touched">firstname is required</span>
+                </div>
+            </div>
+        
+            <div>
+                <input type="text"  matInput placeholder="lastname" name="lastname" formControlName="lastname">
+                <div>
+                    <span *ngIf="registerPatientForm.get('lastname')?.errors?.required && registerPatientForm.get('lastname')?.touched">lastname is required</span>
+                  </div>
+            </div>
+        
+            <div>
+                <input type="number"  matInput placeholder="contact" name="contact" formControlName="contact">
+                <div>
+                    <span *ngIf="registerPatientForm.get('contact')?.errors?.required && registerPatientForm.get('contact')?.touched">contact is required</span>
+                  </div>
+           
+            </div>
+        
+            <div>
+                <input type="text" matInput  placeholder="address" name="address" formControlName="address">
+                <div>
+                    <span *ngIf="registerPatientForm.get('address')?.errors?.required && registerPatientForm.get('address')?.touched">address is required</span>
+                  </div>
+                  
+            </div>
+            <mat-card-actions>
+             <button type="submit" [disabled]="registerPatientForm.invalid">Register</button>
+            </mat-card-actions>
           
+        
+        </form>
+        </mat-card-content>
+        </mat-card>
     </div>
-    <mat-card-actions>
-     <button type="submit" [disabled]="registerPatientForm.invalid">Register</button>
-    </mat-card-actions>
-  
-
-</form>
-</mat-card-content>
-</mat-card>
+ 
+</div>

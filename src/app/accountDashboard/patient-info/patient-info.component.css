@@ -7,11 +7,23 @@
     text-align: center
   }
 
+  .example-section {
+    margin: 12px 0;
+  }
+  
+  .example-margin {
+    margin: 0 12px;
+  }
+
   input:not([type = 'radio']) {
     width: 80%;
     padding: 10px;
     margin: 10px;
   }
+
+  /* .main{
+    margin-top: 1em;
+  } */
 
   mat-card-actions > button {
     width: 40%;
@@ -23,5 +35,5 @@
 
 
 .main{
-    margin-top: 10em;
+    margin-top: 1em;
 }

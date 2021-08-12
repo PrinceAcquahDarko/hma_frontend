@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { PatientComponent } from './patient/patient.component';
 import { PatientDetailComponent } from './patient-detail/patient-detail.component';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -18,7 +19,8 @@ import { HeaderComponent } from './header/header.component';
     HomeComponent,
     PatientComponent,
     PatientDetailComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
 
   ],
   imports: [

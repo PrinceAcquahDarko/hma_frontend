@@ -2,9 +2,10 @@
 
 
   .card {
-    margin : auto;
-    width: 60%;
-    text-align: center
+    margin : 2em auto 0 auto;
+    width: 50%;
+    text-align: center;
+
   }
 
   input:not([type = 'radio']) {
@@ -22,6 +23,3 @@
 }
 
 
-.main{
-    margin-top: 10em;
-}

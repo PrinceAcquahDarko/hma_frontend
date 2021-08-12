@@ -11,6 +11,9 @@ export class AllPatientsComponent implements OnInit {
   getActivePatients$ = this.frontendservice.getactivePatient().pipe(
     map(res => res.users)
   )
+
+  displayedColumns: string[] = ['image', 'firstname', 'lastname', 'contact', 'address', 'email', 'delete'];
+
   constructor(private frontendservice: FrontEndServiceService) { }
 
   ngOnInit(): void {

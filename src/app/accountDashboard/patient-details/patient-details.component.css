@@ -1,0 +1,63 @@
+
+.divider{
+    background-color: #e6e6e6;
+    padding: 40px 3px 40px 3px;
+}
+
+.secondpart{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.info{
+    border-radius: 20px;
+    width: 100%;
+    margin-top: 2em;
+    background: #fff;
+    color: rgba(0,0,0,.87);
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+main{
+
+    margin-top: 40px;
+}
+
+img{
+    width: 40px;
+}
+
+mat-icon{
+    color: #6666ff;
+    font-size: 50px;
+    height: -webkit-fill-available;
+}
+
+.butt{
+    text-align: center;
+    margin-top: 4em;
+}
+
+button{
+    padding: 8px;
+    background-color: #4285F4;
+    color: #fff;
+
+
+}
+
+
+.coverall{
+    margin-top: 40px;
+    background-image: url("https://th.bing.com/th/id/R.0a7aca827f682908c566cf6809481bb8?rik=EhDMv2oxkHjXHw&pid=ImgRaw&r=0"); 
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 1001px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}   

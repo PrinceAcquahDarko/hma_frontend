@@ -12,8 +12,13 @@
             
         
             <div>
-                <input type="text"matInput  placeholder="getLab" required name="getLab" #getLab = 'ngModel' [(ngModel)] = "labInfo.getLab">
+                <!-- <input type="text" matInput  placeholder="getLab"name="getLab" required  #getLab = 'ngModel' [(ngModel)] = "labInfo.getLab"> -->
+                <textarea placeholder="getLab" name="getLab" id="getLab" cols="43" rows="8" #getLab = 'ngModel' [(ngModel)] = "labInfo.getLab"></textarea>
+                
                 <span [hidden]= "getLab.valid || getLab.untouched"> getLab is required </span>
+
+       
+
     
             </div>
     

@@ -1,8 +1,121 @@
-<div>
+<!-- <div >
     <app-patient-detail-shared></app-patient-detail-shared>
-</div>
+</div> -->
 
 
-<div>
-    are you working?
-</div>
+
+<main>
+
+    <!-- {{user | json}} -->
+
+    <div >
+        <section class="info">
+            <div class="secondpart">
+                <img src="https://img.icons8.com/material-outlined/24/4a90e2/money-bag-franc.png"/>
+        
+                <div>
+                    <h3>laboratory Amount</h3>
+                    <h4>{{user?.labAmount}}</h4>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="secondpart">
+                <img src="https://img.icons8.com/material-outlined/24/4a90e2/money-bag-franc.png"/>
+        
+                <div>
+                    <h3>Drugs Amount</h3>
+                    <h4>{{user?.pharmAmount}}</h4>
+                </div>
+            </div>
+          
+        </section>
+
+
+        <!-- second part here -->
+        <section class="info">
+            <div class="secondpart">
+                <img src="https://img.icons8.com/material-outlined/24/4a90e2/money-bag-franc.png"/>
+        
+                <div>
+                    <h3>extra Amount</h3>
+                    <h4>0</h4>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="secondpart">
+                <img src="https://img.icons8.com/ios/60/4a90e2/external-card-online-shopping-vitaliy-gorbachev-blue-vitaly-gorbachev.png"/>
+        
+                <div>
+                    <h3>nhis </h3>
+                    <h4>{{user?.nhis}}</h4>
+                </div>
+            </div>
+          
+        </section>
+        <!-- <section class="info">
+            <div class="secondpart">
+                <img src="https://img.icons8.com/bubbles/50/4a90e2/sneezing-in-a-tissue.png"/>
+        
+                <div>
+                    <h3>symptoms</h3>
+                    <h4>{{user.postDrugs}}</h4>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="secondpart">
+                <img src="https://img.icons8.com/doodle/48/4a90e2/illness.png"/>
+        
+                <div>
+                    <h3>illness</h3>
+                    <h4>{{user.illness}}</h4>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="secondpart">
+              <mat-icon>person</mat-icon>
+        
+                <div>
+                    <h3>special treatment</h3>
+                    <h4>{{user.height}}</h4>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- third part -->
+        <section class="info">
+            <div class="secondpart">
+                <img src="https://img.icons8.com/material-outlined/24/4a90e2/money-bag-franc.png"/>
+        
+                <div>
+                    <h3>Total Amount</h3>
+                    <h4>{{user?.pharmAmount + user?.labAmount}}</h4>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="secondpart">
+                <img src="https://img.icons8.com/material-outlined/24/4a90e2/money-bag-franc.png"/>
+        
+                <div>
+                    <h3>Paid Amount</h3>
+                    <h4>{{user?.amountPaid}}</h4>
+                </div>
+            </div>
+          
+        </section>
+
+
+    </div>
+
+    <div class="butt">
+        <button (click)="populateInfo()">populateData</button>
+    </div>
+    
+</main>
+
+
+
+
+
+
+
+

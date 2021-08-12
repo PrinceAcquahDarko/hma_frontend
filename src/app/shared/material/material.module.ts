@@ -9,12 +9,15 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+// import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 @NgModule({
   declarations: [],
   exports: [
     MatToolbarModule,
+    // MatDatepickerModule,
     MatFormFieldModule,
     MatCardModule,
     MatSelectModule,
@@ -22,7 +25,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatSidenavModule,
     MatTableModule,
     MatDialogModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule
   ]
 })
 export class MaterialModule { }
