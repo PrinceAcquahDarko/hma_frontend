@@ -13,12 +13,16 @@ export class PatientInfoComponent implements OnInit {
     getLab: '',
     labAmount: ''
   }
+
+  show = false
   constructor(private frontendservice: FrontEndServiceService, public dialogRef: MatDialogRef<PatientInfoComponent>) { }
 
   ngOnInit(): void {
+    this.getUser();
   }
 
   populateData(): void{
+    this.show = true;
     this.frontendservice.populatePatientData(this.labInfo).subscribe(
       (res) => {
         this.errororconfirmmsg = res.message;
@@ -26,16 +30,24 @@ export class PatientInfoComponent implements OnInit {
       },
       (err) => {
         this.errororconfirmmsg = err
-      }
+      },
+      () => {this.show = false}
     )
   }
 
   closeDialog(): void{
     this.dialogRef.close({
-      event: 'close'
+      event: 'close', data : {info: this.labInfo}
     })
 
-    this.frontendservice.data = this.labInfo
+  }
+  getUser(): void{
+    this.frontendservice.getPatient().subscribe(
+      res => {   
+        this.labInfo.getLab = res.user.getLab
+        this.labInfo.labAmount = res.user.labAmount
+      }
+    )
   }
 
 }

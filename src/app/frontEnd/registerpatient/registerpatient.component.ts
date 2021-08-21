@@ -9,7 +9,7 @@ import { FrontEndServiceService } from '../front-end-service.service';
   styleUrls: ['./registerpatient.component.css']
 })
 export class RegisterpatientComponent implements OnInit {
-
+show = false
   errormsg: string = '';
 
   registerPatientForm: FormGroup = this.fb.group({
@@ -31,6 +31,7 @@ export class RegisterpatientComponent implements OnInit {
 
   registerPatient(): void{
     // alert('not yet implementeed')
+    this.show = true
     this.frontSerice.registerPatient(this.registerPatientForm.value).subscribe(
       (res) => {
         if(res.key){
@@ -40,7 +41,8 @@ export class RegisterpatientComponent implements OnInit {
           this.errormsg = res.message
         }
       },
-      err => this.errormsg = err
+      err => this.errormsg = err,
+      () =>this.show = false
     )
   }
 

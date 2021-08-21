@@ -1,0 +1,26 @@
+
+
+
+
+  mat-toolbar{
+    width: 95%;
+    background: #fff;
+    color: rgba(0,0,0,.87);
+    margin-left: 1.5em;
+
+  }
+
+  mat-toolbar > div{
+      margin: auto
+    }
+
+
+
+
+  mat-icon{
+    color: #6666ff;
+  }
+
+
+
+

@@ -1,8 +1,39 @@
 
 <!-- here we are suppose to get all the patient details here -->
 
-<div *ngFor = "let patient of patients$ | async">
+<!-- <div *ngFor = "let patient of patients$ | async">
     <div>
         {{patient | json}}
+        (keyup)="applyFilter($event)" 
+        *ngIf = "staffWithSearch$"
     </div>
+</div> -->
+
+<div class="middle">
+    <main>
+        <mat-card class="search">
+            <mat-form-field  >
+        <input matInput (keyup) ="applyFilter($event)" placeholder="Enter patient's id here for details" #input>
+              </mat-form-field>
+           
+        </mat-card>
+        <div @fadeSlideInOut *ngFor = "let patient of PatientWithSearch$ | async">
+            <mat-card class="forTable">
+                <table>
+                    <tr>
+                        <th>Key</th>
+                        <th>Date</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>{{patient.key}}</td>
+                        <td>{{patient?.lastActiveAt}}</td>
+                        <td><a  (click) ="openDialog(patient)">view</a></td>
+                    </tr>
+                </table>
+            </mat-card>
+
+        </div>
+    </main>
+  
 </div>

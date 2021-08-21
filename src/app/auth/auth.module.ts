@@ -6,22 +6,27 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent} from './login/login.component';
 import { SharedModule } from '../shared/shared.module';
+import { HelloComponent } from './hello/hello.component';
 
 
 
 @NgModule({
   declarations: [
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    HelloComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild([
-    // {
-    //     path: '', redirectTo: 'login', pathMatch: 'full'
-    // },
+    {
+        path: '', redirectTo: 'home', pathMatch: 'full'
+    },
+    {
+      path: 'home', component: HelloComponent 
+    },
       {
         path: 'register', component: RegisterComponent
       },

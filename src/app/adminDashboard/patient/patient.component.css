@@ -1,0 +1,42 @@
+.search{
+    width: 90%;
+    background: #fff;
+    margin: 0 auto 3em auto  ;
+
+  }
+
+  table {
+    width: 100%;
+    border-spacing: 5px;
+
+  }
+
+  .forTable{
+    width: 90%;
+    background: #fff;
+    margin-bottom: 3em;
+    margin: auto  ; 
+  }
+
+  mat-form-field{
+      width: 100%;
+  }
+
+  table, th, td{
+      border: 1px solid  #6666ff;
+      border-collapse: collapse;
+
+  }
+
+  th{
+    text-align: left;
+
+  }
+
+  th, td{
+      padding: 15px;
+  }
+
+  main{
+    padding-top: 3em;
+}

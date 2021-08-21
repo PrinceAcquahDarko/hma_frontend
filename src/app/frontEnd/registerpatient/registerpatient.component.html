@@ -2,6 +2,9 @@
     <div class="main">
         <mat-card class="card">
             <h2>REGISTER PATIENT FORM</h2>
+
+    <mat-spinner *ngIf="show"></mat-spinner>
+
             <mat-card-content>
         <form [formGroup] = 'registerPatientForm' (ngSubmit) ="registerPatient()">
             <div>

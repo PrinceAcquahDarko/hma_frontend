@@ -1,12 +1,14 @@
 
+<div @fadeSlideInOut>
 
-<div class="header">
+
+  <div class="header">
     <div>
         <app-header></app-header>
     </div>
 </div>
 
-<div class="main">
+<div  class="main">
     <div class="first">
         <mat-drawer-container class="example-container">
             <mat-drawer mode="side" opened>
@@ -27,7 +29,7 @@
             </mat-drawer>
             <mat-drawer-content>
                 <section class="section2">
-                    <div>
+                    <div >
                         <router-outlet></router-outlet>
 
                     </div>
@@ -42,59 +44,8 @@
       <div class="wrapper">
         <p>Recent Patients</p>
         <div>
-            <mat-card class="example-card">
-              <mat-card-content>
-                <mat-icon>person</mat-icon>
-                  <div>
-                    <h3>Dr Amanda Atunah</h3>
-                    <p>
-                        lokui458
-                    </p>
-                  </div>
-               
-  
-  
-  
-              </mat-card-content>
-             
-            </mat-card>
-          </div>
-          <div>
-            <mat-card class="example-card">
-                <mat-card-content>
-                    <mat-icon>person</mat-icon>
-                      <div>
-                        <h3>Dr Amanda Atunah</h3>
-                        <p>
-                            lokui458
-                        </p>
-                      </div>
-                   
-      
-      
-      
-                  </mat-card-content>
-             
-            </mat-card>
-          </div>
-          <div>
-            <mat-card class="example-card">
-                <mat-card-content>
-                    <mat-icon>person</mat-icon>
-                      <div>
-                        <h3>Dr Amanda Atunah</h3>
-                        <p>
-                            lokui458
-                        </p>
-                      </div>
-                   
-      
-      
-      
-                  </mat-card-content>
-             
-            </mat-card>
-          </div>
+          <app-carousel></app-carousel>
+        </div>
 
 
 
@@ -105,7 +56,7 @@
                   <mat-card-content>
                     <mat-icon >person</mat-icon>
                       <div>
-                        <h3>Dr Amanda Atunah</h3>
+                        <h3>{{user?.firstname}}</h3>
                         <p>
                             lokui458
                         </p>
@@ -136,9 +87,11 @@
 
 <div class="header">
     <div class="bottom">
-        <app-header></app-header>
+        <app-footer></app-footer>
     </div>
   </div>
+</div>
+
 
 
 

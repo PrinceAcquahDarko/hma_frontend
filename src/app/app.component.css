@@ -2,6 +2,17 @@
     flex: 1 1 auto;
   }
 
+  @media only screen and (max-width: 800px) {
+
+    .main{
+      display: none;
+    
+    }
+    
+    
+    
+    }
+
 
 
 

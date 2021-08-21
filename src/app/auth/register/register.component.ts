@@ -26,6 +26,7 @@ function passwordMatcher(c: AbstractControl): { [key:string]: boolean } | null {
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  show = false;
   errormsg: string = ''
 
   registerForm: FormGroup = this.fb.group({
@@ -54,18 +55,25 @@ export class RegisterComponent implements OnInit {
 
   registerUser(): void{
       if(this.registerForm?.valid){
+        this.show = true
         this.authService.registerUser(this.registerForm.value).subscribe(
           (res: IRespons) => {
             if(!!res.auth)
               {
                 localStorage.setItem('token', JSON.stringify(res.token))
+                localStorage.setItem('fullname', JSON.stringify(res.fullname))
+                 this.authService.position = res.position;
+
                 this.router.navigate([`user/${res.position}`])
               }
             else{
                 this.errormsg = res.message
             }
           },
-          err => this.errormsg = err
+          err => this.errormsg = err,
+          () => {
+            this.show = false;
+          }
         )
       } 
   }

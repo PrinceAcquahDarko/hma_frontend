@@ -26,7 +26,9 @@ export class PatientDetailsComponent implements OnInit {
     });
   
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      if(result.data.info){
+        this.user = result.data.info
+      }
 
     });
     }

@@ -1,23 +1,19 @@
 
-<div *ngIf = "getActivePatients$ | async">
     
-<!-- here are to get the all the working staff -->
-<div *ngIf = "getActivePatients$ | async " class="middle">
+<div *ngIf = "PatientWithSearch$ | async " class="controller">
     <main>
 
-        <!-- <div>
-            <h2>ALL STAFF</h2>
-        </div> -->
+       
 
-            <!-- <mat-card class="search">
-                <mat-form-field  *ngIf = "getActivePatients$" >
+            <mat-card class="search">
+                <mat-form-field  *ngIf = "PatientWithSearch$" >
                     <input matInput (keyup)="applyFilter($event)" placeholder="firstName" #input>
                   </mat-form-field>
                
-            </mat-card> -->
+            </mat-card>
 
 
-        <table mat-table [dataSource]="getActivePatients$" class="mat-elevation-z8">
+        <table mat-table [dataSource]="PatientWithSearch$" class="mat-elevation-z8">
 
             <ng-container matColumnDef="image">
                 <th mat-header-cell *matHeaderCellDef>  </th>
@@ -70,5 +66,4 @@
      
 
    
-</div>
 </div>

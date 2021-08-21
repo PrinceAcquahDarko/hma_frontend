@@ -9,6 +9,7 @@ import { ILogin, IRespons } from '../interface';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  show= false;
   @ViewChild(NgForm) registerForm: NgForm | undefined
 
   errormsg: string = ''
@@ -26,26 +27,29 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser(): void{
-    console.log(this.registerForm?.invalid)
 
     if(this.isValid){
-      console.log('yes its valid from loginUser')
+      this.show = true
       this.authService.loginUser(this.userCredentials).subscribe(
         (res: IRespons) => {
           if(!!res.auth)
             {
-              localStorage.setItem('token', JSON.stringify(res.token))
+              localStorage.setItem('token', JSON.stringify(res.token));
+              localStorage.setItem('fullname', JSON.stringify(res.fullname));
+              this.authService.position = res.position;
               this.router.navigate([`user/${res.position}`])
             }
           else{
               this.errormsg = res.message
           }
         },
-        err => this.errormsg = err
+        err => this.errormsg = err,
+        () => {
+          this.show = false
+        }
       )
     }
 
-    //call service
   }
 
 }

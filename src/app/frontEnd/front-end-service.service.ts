@@ -2,7 +2,6 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { INurse } from '../shared/patientInfo.interface';
 import { IInitialize, IPatientRegister } from './frontEndInterface';
 
 @Injectable({
@@ -12,10 +11,10 @@ export class FrontEndServiceService {
   url = "http://localhost:3000"
   constructor(private http: HttpClient) { }
 
-  data: any;
   key: string = ''
   user: any;
   currentUser: string = ''
+  loggedInPatient: string = '';
 
   registerPatient(data: IPatientRegister): Observable<any>{
       return this.http.post<IPatientRegister>(this.url + '/patient', data ).pipe(
@@ -32,8 +31,12 @@ export class FrontEndServiceService {
 
 
   getPatient(data?: string): Observable<any>{
+      let user = JSON.parse(localStorage.getItem('currentUser')!);
       if(data){
         this.currentUser = data
+      }
+      if(user){
+        this.currentUser = user
       }
       return this.http.get(this.url +'/details/patient' + '?key=' + this.currentUser ).pipe(
         catchError(this.handleError)
@@ -59,6 +62,12 @@ export class FrontEndServiceService {
       catchError(this.handleError)
     )
     
+  }
+
+  getLoggedInPatient(key: string):Observable<any>{
+    return this.http.get(this.url + '/patient/single'+ '?key=' + key).pipe(
+      catchError(this.handleError)
+    )
   }
 
   

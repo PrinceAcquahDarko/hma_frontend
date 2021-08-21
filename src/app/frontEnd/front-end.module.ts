@@ -22,7 +22,7 @@ import { RegisterpatientComponent } from './registerpatient/registerpatient.comp
   imports: [
     CommonModule,
     RouterModule.forChild([
-      {path: 'user/frontEnd', component: FrontEndComponent, children: [
+      // {path: 'user/frontEnd', component: FrontEndComponent, children: [
         {
           path: '', redirectTo: 'home', pathMatch: 'full'
         },
@@ -39,7 +39,7 @@ import { RegisterpatientComponent } from './registerpatient/registerpatient.comp
           path: 'registerPatient', component: RegisterpatientComponent
         }
 
-      ]}
+      // ]}
     ]),
     SharedModule
   ]

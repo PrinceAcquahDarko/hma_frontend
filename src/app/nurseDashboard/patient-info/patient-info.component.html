@@ -5,6 +5,9 @@
     <mat-card-content>
 <form #form ="ngForm" (ngSubmit)="populateData()">
 
+    <mat-spinner *ngIf="show"></mat-spinner>
+
+
     <div>
         <input type="text" placeholder="temperature" name="temperature" required #temperature = 'ngModel' [(ngModel)] = "appearance.temperature">
         <span [hidden]= "temperature.valid || temperature.untouched"> temperature is required </span>

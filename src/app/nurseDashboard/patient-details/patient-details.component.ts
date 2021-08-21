@@ -8,7 +8,7 @@ import { PatientInfoComponent } from '../patient-info/patient-info.component';
   styleUrls: ['./patient-details.component.css']
 })
 export class PatientDetailsComponent implements OnInit {
-
+  info: any;
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -24,6 +24,10 @@ export class PatientDetailsComponent implements OnInit {
   
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
+
+      if(result.data.info){
+        this.info = result.data.info
+    }
 
     });
   }

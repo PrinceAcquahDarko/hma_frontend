@@ -8,6 +8,10 @@ import { PatientComponent } from './patient/patient.component';
 import { PatientDetailComponent } from './patient-detail/patient-detail.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { CarouselComponent } from './carousel/carousel.component';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
+
 
 
 
@@ -20,14 +24,18 @@ import { FooterComponent } from './footer/footer.component';
     PatientComponent,
     PatientDetailComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SidebarComponent,
+    CarouselComponent
 
   ],
   imports: [
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    MatCarouselModule.forRoot(),
+
   ],
   exports: [
     FormsModule,
@@ -37,7 +45,11 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     PatientComponent,
     PatientDetailComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent,
+    CarouselComponent,
+    MatCarouselModule
+
 
 
   ]

@@ -8,7 +8,8 @@ import { PatientComponent } from './patient/patient.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { AllPatientsComponent } from './all-patients/all-patients.component';
-
+import { PatientDetailsComponent } from './patient-details/patient-details.component';
+import { PatientPopulateComponent } from './patient-populate/patient-populate.component';
 
 
 @NgModule({
@@ -18,12 +19,14 @@ import { AllPatientsComponent } from './all-patients/all-patients.component';
     AboutComponent,
     StaffComponent,
     PatientComponent,
-    AllPatientsComponent
+    AllPatientsComponent,
+    PatientDetailsComponent,
+    PatientPopulateComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild([
-      {path: 'user/admin', component: InterfaceComponent, children: [
+      // {path: 'user/admin', component: InterfaceComponent, children: [
         {
           path: '', redirectTo: 'home', pathMatch: 'full'
         },
@@ -43,8 +46,9 @@ import { AllPatientsComponent } from './all-patients/all-patients.component';
           path: 'activePatient', component: AllPatientsComponent
         }
 
-      ]}
+      // ]}
     ]),
+
     SharedModule
   ]
 })

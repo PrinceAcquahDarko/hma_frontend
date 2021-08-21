@@ -23,7 +23,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     RouterModule.forChild([
-      {path: 'user/pharmacy', component: InterfaceComponent, children: [
+      // {path: 'user/pharmacy', component: InterfaceComponent, children: [
         {
           path: '', redirectTo: 'home', pathMatch: 'full'
         },
@@ -38,13 +38,9 @@ import { RouterModule } from '@angular/router';
         },
         {
           path: 'about', component: AboutComponent
-        },
-        //we will use a dialog
-        {
-          path: 'populate', component: PatientInfoComponent
         }
 
-      ]}
+      // ]}
     ]),
     SharedModule
   ]

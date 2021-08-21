@@ -1,11 +1,12 @@
 
 
-<main>
+<main @fadeSlideInOut>
     <div *ngIf="!user">
-        <p>hello we lost the current patient please enter patient key once more from the login tab</p>
+        <p>hello there's no logged in user</p>
     </div>
     
     <!-- {{user | json}} -->
+
     
     <div *ngIf="user">
         <section class="info">
@@ -14,7 +15,7 @@
         
                 <div>
                     <h3>temperature</h3>
-                    <h4>{{user.temperature || hello.temperature}}</h4>
+                    <h4>{{user.temperature }}</h4>
                 </div>
             </div>
             <div class="divider"></div>
@@ -76,7 +77,7 @@
         
                 <div>
                     <h3>lab test</h3>
-                    <h4>{{user.postLab || hello.postLab}}</h4>
+                    <h4>{{user.postLab }}</h4>
                 </div>
             </div>
             <div class="divider"></div>
@@ -85,7 +86,7 @@
         
                 <div>
                     <h3>lab Results</h3>
-                    <h4>{{user?.getLab|| hello?.getLab}}</h4>
+                    <h4>{{user?.getLab}}</h4>
                 </div>
             </div>
             <div class="divider"></div>
@@ -127,7 +128,10 @@
                     <h4>{{user.height}}</h4>
                 </div>
             </div>
+
+
         </section>
+
 
         <!-- fifth part -->
         <!-- <section class="info">

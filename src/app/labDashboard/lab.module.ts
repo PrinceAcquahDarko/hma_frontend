@@ -23,7 +23,7 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     RouterModule.forChild([
-      {path: 'user/lab', component: InterfaceComponent, children: [
+      // {path: 'user/lab', component: InterfaceComponent, children: [
         {
           path: '', redirectTo: 'home', pathMatch: 'full'
         },
@@ -39,12 +39,9 @@ import { SharedModule } from '../shared/shared.module';
         {
           path: 'about', component: AboutComponent
         },
-        //we will use a dialog
-        {
-          path: 'populate', component: PatientInfoComponent
-        }
+      
 
-      ]}
+      // ]}
     ]),
     SharedModule
   ]

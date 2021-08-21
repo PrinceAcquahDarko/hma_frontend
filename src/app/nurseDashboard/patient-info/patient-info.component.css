@@ -8,10 +8,22 @@
 
   }
 
+  mat-spinner{
+    position:fixed;
+    top:50%;
+    right: 45%
+  }
+
   input:not([type = 'radio']) {
     width: 80%;
     padding: 10px;
     margin: 10px;
+  }
+
+  mat-spinner{
+    position:fixed;
+    top:50%;
+    right: 45%
   }
 
   mat-card-actions > button {

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthServiceService } from 'src/app/auth/auth-service.service';
+import {trigger, style, animate, transition} from "@angular/animations"
+
 
 
 function passwordMatcher(c: AbstractControl): { [key:string]: boolean } | null {
@@ -20,7 +22,21 @@ function passwordMatcher(c: AbstractControl): { [key:string]: boolean } | null {
 @Component({
   selector: 'app-about-shared',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css']
+  styleUrls: ['./about.component.css'],
+  animations: [
+    trigger('fadeSlideInOut', [
+      transition(':enter', [
+        style({
+          opacity: 0, transform: 'translateY(10px)'
+        }),
+        animate('400ms', style({opacity:0.4,  transform : 'translateY(0px)'}))
+      ]),
+      transition(':leave', [
+        animate('500ms', style({opacity: 0, transform: 'translateY(10px)'}))
+      ])
+    ])
+  ]
+
 })
 export class AboutComponent implements OnInit {
   errormsg: string = ''

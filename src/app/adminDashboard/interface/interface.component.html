@@ -1,144 +1,100 @@
 
+
+
+<div @fadeSlideInOut>
+  
 <div class="header">
-    <div>
-        <app-header></app-header>
-    </div>
+  <div>
+      <app-header></app-header>
+  </div>
 </div>
 
 <div class="main">
-    <div class="first">
-        <mat-drawer-container class="example-container">
-            <mat-drawer mode="side" opened>
-                <section class="section1">
-                    <div>
-                        <ul>
-                            <li><a [routerLink]="['home']"><mat-icon>home</mat-icon></a></li>
-                            <li><a [routerLink]="['patient']"><mat-icon>person</mat-icon></a></li>
-                            <li><a [routerLink]="['staff']"><mat-icon>person</mat-icon></a></li>
-                            <li><a [routerLink]="['activePatient']"><mat-icon>person</mat-icon></a></li>
-                            <li><a [routerLink]="['about']"><mat-icon>person</mat-icon></a></li>
-
-
-                        </ul>
-
-                       
-
-                    </div>
-                </section>
-            </mat-drawer>
-            <mat-drawer-content>
-                <section class="section2">
-                    <div>
-                        <router-outlet></router-outlet>
-
-                    </div>
-                </section>
-            </mat-drawer-content>
-          
-           
-          </mat-drawer-container>
-    </div>
-
-    <div class="second">
-      <div class="wrapper">
-        <p>Recent Patients</p>
-        <div>
-            <mat-card class="example-card">
-              <mat-card-content>
-                <mat-icon>person</mat-icon>
+  <div class="first">
+      <mat-drawer-container class="example-container">
+          <mat-drawer mode="side" opened>
+              <section class="section1">
                   <div>
-                    <h3>Dr Amanda Atunah</h3>
-                    <p>
-                        lokui458
-                    </p>
-                  </div>
-               
-  
-  
-  
-              </mat-card-content>
-             
-            </mat-card>
-          </div>
-          <div>
-            <mat-card class="example-card">
-                <mat-card-content>
-                    <mat-icon>person</mat-icon>
-                      <div>
-                        <h3>Dr Amanda Atunah</h3>
-                        <p>
-                            lokui458
-                        </p>
-                      </div>
-                   
-      
-      
-      
-                  </mat-card-content>
-             
-            </mat-card>
-          </div>
-          <div>
-            <mat-card class="example-card">
-                <mat-card-content>
-                    <mat-icon>person</mat-icon>
-                      <div>
-                        <h3>Dr Amanda Atunah</h3>
-                        <p>
-                            lokui458
-                        </p>
-                      </div>
-                   
-      
-      
-      
-                  </mat-card-content>
-             
-            </mat-card>
-          </div>
+                      <ul>
+                          <li>
+                            <a [routerLink]="['home']"><mat-icon>home</mat-icon></a></li>
+                          <li><a [routerLink]="['patient']"><mat-icon>person</mat-icon></a></li>
+                          <li><a [routerLink]="['activePatient']"><mat-icon>person</mat-icon></a></li>
+                          <li><a [routerLink]="['staff']"><mat-icon>staff</mat-icon></a></li>
+                          <li><a [routerLink]="['about']"><mat-icon>person</mat-icon></a></li>
 
 
+                      </ul>
 
-          <div class="currentPatient">
-            <p>current Patient</p>
-            <div>
-                <mat-card class="example-card2">
-                  <mat-card-content>
-                    <mat-icon >person</mat-icon>
-                      <div>
-                        <h3>Dr Amanda Atunah</h3>
-                        <p>
-                            lokui458
-                        </p>
-                      </div>
                      
-                    </mat-card-content>
-             
-                </mat-card>
-              </div>
-            </div>
-         
-               
-  
-  
-  
-              
-        
-    </div>
-      </div>
- 
 
+                  </div>
+              </section>
+          </mat-drawer>
+          <mat-drawer-content>
+              <section class="section2">
+                  <div>
+                      <router-outlet></router-outlet>
+
+                  </div>
+              </section>
+          </mat-drawer-content>
+        
+         
+        </mat-drawer-container>
+  </div>
+
+  <div class="second">
+    <div class="wrapper">
+      <p>Recent Patients</p>
+      <div>
+        <app-carousel></app-carousel>
+      </div>
+
+
+
+
+        <div class="currentPatient">
+          <p>current Patient</p>
+          <div>
+              <mat-card class="example-card2">
+                <mat-card-content>
+                  <mat-icon >person</mat-icon>
+                    <div>
+                      <h3>Dr Amanda Atunah</h3>
+                      <p>
+                          lokui458
+                      </p>
+                    </div>
+                   
+                  </mat-card-content>
+           
+              </mat-card>
+            </div>
+          </div>
+       
+             
+
+
+
+            
       
+  </div>
+    </div>
+
+
     
-    
-    
-   
+  
+  
+  
+ 
 </div>
 
 <div class="header">
-  <div class="bottom">
-      <app-header></app-header>
-  </div>
+<div class="bottom">
+    <app-footer></app-footer>
+</div>
+</div>
 </div>
 
 

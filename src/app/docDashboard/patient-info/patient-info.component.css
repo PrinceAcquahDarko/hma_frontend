@@ -26,6 +26,12 @@
     margin: 10px;
 }
 
+mat-spinner{
+  position:fixed;
+  top:50%;
+  right: 45%
+}
+
 
 .main{
     margin-top: 10em;

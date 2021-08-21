@@ -10,6 +10,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 // import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
@@ -26,7 +27,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatTableModule,
     MatDialogModule,
     MatIconModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatProgressSpinnerModule
+    
   ]
 })
 export class MaterialModule { }

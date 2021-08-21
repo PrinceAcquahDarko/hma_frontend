@@ -18,4 +18,5 @@ export interface IRespons {
     message: string,
     token?: string,
     position: string,
+    fullname: string
 }

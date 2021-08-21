@@ -6,17 +6,61 @@
     min-height: 100%;
     display: grid;
     grid-template-columns: repeat(1fr, 12);
-    grid-template-rows: auto 645px auto
+    grid-template-rows: auto 640px auto;
+    background: #fff;
 
 }
 
+
+button {
+
+  background-color: #3f51b5;
+  color: #fff;
+  padding: 10px;
+}
+
+mat-toolbar{
+  margin-top: -16px;
+  width: 100%;
+  display: flex;
+  color: #fff;
+  justify-content: space-between;
+
+
+}
+
+
+
+mat-toolbar > div{
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+}
+a{
+  color: #fff;
+  text-decoration: none;
+
+}
+
+
+
+
+
+
+
+
+
+
 .card{
     max-width: 400px;
-    height: 90%;
-    /* width: 100%; */
-    margin:auto;
+    height: 70%;
+    margin: 3em auto 10px auto;
 
     text-align: center;
+  }
+
+  .foot{
+    margin: auto;
   }
 
   .mat-input-element {
@@ -52,13 +96,15 @@ mat-card-actions > button {
 
 }
 
+
 mat-card-actions{
   margin-bottom: 10px;
 }
 .section2{
     width: 80%;
-    height: 80%;
+    height: 90%;
     margin: auto;
+
 
 }
 
@@ -70,13 +116,40 @@ button {
   width: 100px;
 }
 
+.section3{
+  margin-top: 3px;
+}
+
+
+.section3 > mat-toobar{
+  height: 100%;
+}
+
+
+circle {
+  stroke-width: 3% !important;
+  width: 5%;
+
+}
+
+mat-spinner{
+  position:fixed;
+  top:50%;
+  right: 45%
+}
+
+
 @media only screen and (max-width: 800px) {
 
-.main{
-  grid-template-rows: auto 700px auto
+  .main{
+    display: grid;
+    grid-template-columns: repeat(1fr, 12);
+    grid-template-rows: auto 699px auto;
+  
+  }
+  
+  
+  
+  }
 
-}
 
-
-
-}

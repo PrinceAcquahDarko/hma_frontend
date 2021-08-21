@@ -10,7 +10,7 @@ import { catchError } from 'rxjs/operators';
 export class AuthServiceService {
 
   constructor(private http: HttpClient) { }
-
+  position: string = ''
   url = 'http://localhost:3000'
 
   registerUser(data: IRegister): Observable<any>{
@@ -43,6 +43,7 @@ export class AuthServiceService {
     }
     else{
       message =  `Oops an error occured try again later`
+      console.log(err)
     }
 
     return throwError(message)

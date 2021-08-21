@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; background-color: #e6e6e6; }
-body { margin: 0; font-family:Raleway, sans-serif; ; }
+body { margin: 0;padding:0; font-family:Raleway, sans-serif; ; }
 
 .middle{
 
@@ -17,5 +17,14 @@ body { margin: 0; font-family:Raleway, sans-serif; ; }
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
     
+    
     }
+
+
+    li.carousel-slide.ng-star-inserted {
+        height: 300px !important;
+    }
+
+
+
 

@@ -1,5 +1,6 @@
 table {
     width: 100%;
+
   }
 mat-icon{
   color: #6666ff;
@@ -17,6 +18,22 @@ main > div {
 }
 
 
+.controller{
+
+  /* background-color:  #6666ff; */
+  /* bacgroundur */
+  /* background: lightblue url("") no-repeat  center; */
+  /* height: 1005px; */
+  margin-top: 40px;
+  background-image: url("https://banner2.kisspng.com/20171218/1bc/doctor-png-5a3855d89bd012.4129718415136414326382.jpg"); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 1001px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  overflow-y: scroll;
+  
+  }
 
 main{
     padding-top: 3em;

@@ -1,0 +1,102 @@
+
+<mat-card class="card">
+    <h2> PATIENT'S REPORT FORM</h2>
+    {{errororconfirmmsg}}
+    <mat-card-content>
+<form #form ="ngForm" (ngSubmit)="populateData()">
+
+    <div>
+        <input type="text" placeholder="temperature" name="temperature" required #temperature = 'ngModel' [(ngModel)] = "user.temperature">
+        <span [hidden]= "temperature.valid || temperature.untouched"> temperature is required </span>
+    </div>
+
+    <div>
+        <input type="text" placeholder="bloodpressure" name="bloodpressure" required #bloodpressure = 'ngModel' [(ngModel)] = "user.bloodpressure">
+        <span [hidden]= "bloodpressure.valid || bloodpressure.untouched"> bloodpressure is required </span>
+
+    </div>
+
+    <div>
+        <input type="text" placeholder="height" name="height" required #height = 'ngModel' [(ngModel)] = "user.height">
+        <div>
+        <span [hidden]= "height.valid || height.untouched"> height is required </span>
+
+        </div>
+    </div>
+
+    <div>
+        <input type="text" placeholder="weight" name = "weight" required #weight = 'ngModel' [(ngModel)] = "user.weight">
+        <div>
+
+            <span [hidden]= "weight.valid || weight.untouched"> weight is required</span>
+        </div>
+    </div>
+
+    <div>
+    <textarea placeholder="symptoms" name="symptoms" id="symptoms" cols="50" rows="4" #symptoms = 'ngModel' [(ngModel)] = "user.symptoms"></textarea>
+        
+    </div>
+    <div>
+
+        <div>
+           
+    <textarea placeholder="postLab" name="postLab" id="postLab" cols="50" rows="4" #postLab = 'ngModel' [(ngModel)] = "user.postLab"></textarea>
+           
+        </div>
+    <textarea placeholder="illness" name="illness" id="illness" cols="50" rows="4" #illness = 'ngModel' [(ngModel)] = "user.illness"></textarea>
+
+
+    </div>
+
+
+  
+
+    <div>
+       
+    <textarea placeholder="postDrugs" name="postDrugs" id="postDrugs" cols="50" rows="4" #postDrugs = 'ngModel' [(ngModel)] = "user.postDrugs"></textarea>
+       
+    </div>
+
+    
+    <div>
+        <textarea placeholder="getLab" name="getLab" id="getLab" cols="50" rows="8" #getLab = 'ngModel' [(ngModel)] = "user.getLab"></textarea>
+<div>
+    <span [hidden]= "getLab.valid || getLab.untouched"> getLab is required </span>
+</div>
+
+    </div>
+
+    <div>
+        <input type="text"  placeholder="labAmount" required name="labAmount" #labAmount = 'ngModel' [(ngModel)] = "user.labAmount">
+        <span [hidden]= "labAmount.valid || labAmount.untouched"> labAmount is required </span>
+    </div>
+
+    <div>
+      
+        <textarea placeholder="drugs administered" name="getDrugs" id="getDrugs" cols="50" rows="8" #getDrugs = 'ngModel' [(ngModel)] = "user.getDrugs"></textarea>
+      
+        <div>
+        <span [hidden]= "getDrugs.valid || getDrugs.untouched"> getDrugs is required </span>
+
+        </div>
+    </div>
+
+    <div>
+        <input type="text" placeholder="pharmAmount" required name="pharmAmount" #pharmAmount = 'ngModel' [(ngModel)] = "user.pharmAmount">
+        <div>
+
+        <span [hidden]= "pharmAmount.valid || pharmAmount.untouched"> pharmAmount is required </span>
+
+        </div>
+    </div>
+ <mat-card-actions>
+    <button type="submit" [disabled] = "form.invalid">Submit </button>
+
+ </mat-card-actions>
+
+
+
+</form>
+</mat-card-content>
+</mat-card>
+

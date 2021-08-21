@@ -24,7 +24,7 @@ import { PatientInfoComponent } from './patient-info/patient-info.component';
     CommonModule,
     RouterModule.forChild([
       
-        {path: 'user/nurse', component: InterfaceComponent, children: [
+        // {path: 'user/nurse', component: InterfaceComponent, children: [
           {
             path: '', redirectTo: 'home', pathMatch: 'full'
           },
@@ -45,7 +45,7 @@ import { PatientInfoComponent } from './patient-info/patient-info.component';
           //   path: 'populate', component: PatientInfoComponent
           // }
   
-        ]}
+        // ]}
 
     ]),
     SharedModule

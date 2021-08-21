@@ -1,34 +1,25 @@
 
 
-<!-- <div>
-    <img src="" alt="">
-</div> -->
-<!-- 
-<form #form ="ngForm" (ngSubmit)="loginUser()">
-    <div>
-        {{errormsg}}
-    </div>
-    <div>
-        <input type="email" name="email" required #email = 'ngModel' [(ngModel)] = "userCredentials.email">
-        <span [hidden]= "email.valid || email.untouched"> email is required and must be valid</span>
-    </div>
-
-    <div>
-        <input type="password" name = "password" required #password = 'ngModel' [(ngModel)] = "userCredentials.password">
-        <span [hidden]= "password.valid || password.untouched"> password is required</span>
-    </div>
- 
-    <button type="submit" [disabled] = "form.invalid">login</button>
-
-
-
-</form> -->
-
 <div class="main">
     <section class="section1">
-        <app-header></app-header>
+        <div>
+            <p>
+                <mat-toolbar  color="primary">
+              
+                  <span>COMMUNITY HOSPITAL</span>
+                    <div>
+                      <a>REGISTER</a>
+                      
+                    </div>
+                  
+                   
+           
+                </mat-toolbar>
+              </p>
+        </div>
         
     </section>
+
 <section class="section2">
     <mat-card class="card">
         <h2>Login Form</h2>
@@ -36,6 +27,8 @@
     
         <mat-card-content>
             <form #form="ngForm" (ngSubmit)="loginUser()">
+                <mat-spinner *ngIf="show"></mat-spinner>
+
                 
                 <div *ngIf = "errormsg">
                     {{errormsg}}
@@ -56,6 +49,8 @@
     
       </mat-card>
 </section>
+
+
 
 <section class="section3">
     <mat-toolbar color="primary">
