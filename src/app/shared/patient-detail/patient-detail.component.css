@@ -63,5 +63,9 @@ mat-icon{
         margin-bottom: 20px;
     }
 
+    .nouser > p{
+        margin: 4em;
+    }
+
   
 }

@@ -133,6 +133,10 @@ hr{
         padding-left : 2em;
         padding-right: 1em;
         margin-top: 0;
+        margin-bottom: 10px;
+    }
+    section > h3 {
+        margin: 12px;
     }
 
     .none{
