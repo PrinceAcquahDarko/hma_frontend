@@ -10,7 +10,7 @@
     display: grid;
     grid-template-columns: repeat(1fr,12);
     grid-template-rows: auto;
-    background-image: url("https://media.istockphoto.com/photos/doctor-holding-digital-tablet-at-meeting-room-picture-id1189304032?k=20&m=1189304032&s=612x612&w=0&h=ovTNnR0JX2cRZkzMBed9exRO_PamZLlysLDFkXesr4Q=");
+    background-image: url("https://media.istockphoto.com/photos/we-offer-our-patients-premium-healthcare-here-picture-id638647058?k=20&m=638647058&s=612x612&w=0&h=aRF56ZIBXBL1wN45ZRaHkhmjJjIahkmXTYki7wQteJQ=");
     background-color: #cccccc; /* Used if the image is unavailable */
     /* height: 100%; You must set a specified height */
     background-position: center; /* Center the image */

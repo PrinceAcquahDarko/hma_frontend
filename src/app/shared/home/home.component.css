@@ -151,7 +151,7 @@ hr{
         grid-template-columns: 300px;
         grid-template-rows: 220px 220px 220px;
         row-gap: 5px;
-        margin: auto
+        margin: auto atuo 3em auto;
     
     }
 
