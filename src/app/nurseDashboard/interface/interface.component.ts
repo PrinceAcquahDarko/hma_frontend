@@ -3,7 +3,12 @@ import { map } from 'rxjs/operators';
 import {trigger, style, animate, transition} from "@angular/animations"
 
 import { FrontEndServiceService } from 'src/app/frontEnd/front-end-service.service';
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { Router } from '@angular/router';
 
+
+
+const SMALL_WIDTH_BREAKPOINT = 720
 @Component({
   selector: 'app-interface',
   templateUrl: './interface.component.html',
@@ -24,6 +29,7 @@ import { FrontEndServiceService } from 'src/app/frontEnd/front-end-service.servi
 })
 export class InterfaceComponent implements OnInit {
   user: any;
+  yes = false
   private _currentUser:string = ''
 
 get currentUser(): string{
@@ -44,10 +50,18 @@ set currentUser(value: string){
     )
   }
 }
-  constructor(private frontendservice: FrontEndServiceService) { }
+  constructor(private frontendservice: FrontEndServiceService,private router: Router, private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit(): void {
     this.onRepeat();
+
+    this.breakpointObserver.observe([
+      `(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`
+    ]).subscribe(
+      (state: BreakpointState) =>  {
+        this.yes = state.matches
+      }
+    )
   }
 
   getCurrentUser():void{
@@ -62,6 +76,12 @@ set currentUser(value: string){
     setInterval(()=>{
       this.getCurrentUser()
     },2000)
+  }
+
+  logout(): void{
+    localStorage.clear();
+    this.router.navigate([`/home`])
+
   }
 
 }

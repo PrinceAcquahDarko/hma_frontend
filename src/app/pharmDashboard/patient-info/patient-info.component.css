@@ -7,7 +7,7 @@
     text-align: center
   }
 
-  input:not([type = 'radio']) {
+  input {
     width: 80%;
     padding: 10px;
     margin: 10px;
@@ -28,6 +28,13 @@ mat-spinner{
 }
 
 
-.main{
-    margin-top: 10em;
+
+
+@media only screen and (max-width: 800px) {
+  .card {
+    width: 100%;
+    text-align: center;
+
+  }
+
 }

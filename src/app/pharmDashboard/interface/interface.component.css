@@ -25,10 +25,7 @@ margin-top: 2.9em;
   width: 25%;
   margin-top: 45px;
   margin-right: 2.7em;
-  height: 950px;
-
-
-    
+  height: 900px;  
 }
 .header{
   margin-top: -15.5px;
@@ -59,8 +56,7 @@ margin-top: 2.9em;
 
 mat-drawer{
   background-color:  #6666ff;
-  padding: 9.3px
-
+  padding: 9.1px
 }
 ul{
     padding: 0
@@ -80,7 +76,7 @@ ul li{
  mat-drawer-content{
      margin-top: 25px;
      margin-right: 25px;
-     height: 1000px;
+     height: 950px;
      background-color: #e6e6e6;
  }
 
@@ -128,4 +124,26 @@ ul li{
 
 .example-card2 > mat-card-content > mat-icon{
 color: white
+}
+
+
+
+
+@media only screen and (max-width: 800px) {
+
+  footer >mat-toolbar > div{
+    margin: auto;
+  }
+
+  nav > mat-toolbar > ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  header > mat-toolbar {
+    background: #fff;
+  
+  }
 }

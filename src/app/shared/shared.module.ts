@@ -40,6 +40,7 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
   exports: [
     FormsModule,
     ReactiveFormsModule,
+    CommonModule,
     MaterialModule,
     AboutComponent,
     HomeComponent,

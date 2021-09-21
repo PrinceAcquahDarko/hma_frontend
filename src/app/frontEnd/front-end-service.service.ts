@@ -3,12 +3,14 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { IInitialize, IPatientRegister } from './frontEndInterface';
+import {environment} from "../../environments/environment.prod"
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class FrontEndServiceService {
-  url = "http://localhost:3000"
+  url = environment.url
   constructor(private http: HttpClient) { }
 
   key: string = ''
@@ -25,6 +27,20 @@ export class FrontEndServiceService {
 
   initializePatient(data: IInitialize): Observable<any>{
     return this.http.post<IInitialize>(this.url + '/details', data).pipe(
+      catchError(this.handleError)
+    )
+  }
+
+  deleteStaff(id: string): Observable<any>{
+    
+    return this.http.delete(this.url + '/register/delete' + '?id=' + id).pipe(
+      catchError(this.handleError)
+    )
+  }
+
+  deletePatient(id: string): Observable<any>{
+    
+    return this.http.delete(this.url + '/patient/single' + '?id=' + id).pipe(
       catchError(this.handleError)
     )
   }

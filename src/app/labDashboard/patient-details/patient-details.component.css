@@ -10,3 +10,12 @@ button{
 
 
 }
+
+
+@media only screen and (max-width: 800px) { 
+    .butt{
+        text-align: center;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+}

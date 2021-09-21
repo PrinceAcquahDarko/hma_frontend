@@ -2,7 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { FrontEndServiceService } from 'src/app/frontEnd/front-end-service.service';
 import {trigger, style, animate, transition} from "@angular/animations"
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { Router } from '@angular/router';
 
+
+
+const SMALL_WIDTH_BREAKPOINT = 720;
 
 @Component({
   selector: 'app-interface',
@@ -25,6 +30,7 @@ import {trigger, style, animate, transition} from "@angular/animations"
 export class InterfaceComponent implements OnInit {
   user: any;
   private _currentUser:string = ''
+  yes = false
 
 get currentUser(): string{
   return this._currentUser
@@ -44,10 +50,19 @@ set currentUser(value: string){
     )
   }
 }
-  constructor(private frontendservice: FrontEndServiceService) { }
+  constructor(private frontendservice: FrontEndServiceService, private router: Router,  private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit(): void {
     this.onRepeat()
+
+    this.breakpointObserver.observe([
+      `(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`
+    ]).subscribe(
+      (state: BreakpointState) =>  {
+        this.yes = state.matches
+        console.log('we are matching!!!')
+      }
+    )
   }
 
   getCurrentUser():void{
@@ -64,4 +79,10 @@ set currentUser(value: string){
     },2000)
   }
 
+  logout(): void{
+    localStorage.clear();
+    this.router.navigate([`/home`])
+  }
+
+  // https://image.shutterstock.com/image-photo/black-nurse-portrait-260nw-232644115.jpg
 }

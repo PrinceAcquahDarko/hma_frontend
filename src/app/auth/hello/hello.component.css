@@ -2,29 +2,83 @@
     display: grid;
     grid-template-columns: repeat(1fr,12);
     grid-template-rows: auto;
+    background-color: #fff;
+
 }
 
 .intro{
     display: grid;
     grid-template-columns: repeat(1fr,12);
     grid-template-rows: auto;
+    background-color: #cccccc; /* Used if the image is unavailable */
+    background-image: url("https://media.istockphoto.com/photos/doctor-holding-digital-tablet-at-meeting-room-picture-id1189304032?k=6&m=1189304032&s=612x612&w=0&h=SJPF2M715kIFAKoYHGbb1uAyptbz6Tn7-LxPsm5msPE=");
+    /* height: 100%; You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
 
 }
 
+a{
+    color: white;
+    text-decoration: none;
+
+}
+
+.move{
+    margin-top: 10px;
+}
+
+
+
 .content {
+    margin-top: 5em;
+    margin-bottom: 5em;
+
     grid-column: 3/6;
     grid-row: 1/6;
     display: grid;
-    grid-template-columns: 200px 200px 200px;
-    grid-template-rows: auto;
+    grid-template-columns: 250px 250px 250px;
+    grid-template-rows: 150px 150px 150px;
     row-gap: 14px;
+    column-gap: 14px;
+    text-align: center;
+
 }
 
 .content p{
-    width: 100%;
-    height: 200px;
-    background: blue;
+   margin: 30px 0 30px 0;
 }
+
+.content img{
+    width: 20%;
+}
+
+mat-toolbar{
+    width: 100%;
+    display: flex;
+    color: #fff;
+    justify-content: space-between;
+    background-color: #4285F4;
+
+  
+  
+  }
+
+
+  mat-card{
+    background-color: #4285F4;
+    color: white;
+      
+  }
+  
+  
+  
+  mat-toolbar > div{
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+  }
 
 
 
@@ -32,18 +86,167 @@
     grid-column: 7/12
 }
 
-.general > div{
-    display: grid;
-    grid-template-columns: repeat(1fr,12);
-    grid-template-rows: auto;
+.general{
+    width: 80%;
+    margin: 5em auto 0 auto;
+}
+
+.general > mat-card > div{
+    display: flex;
+}
+
+.general > mat-card > div > p{
+    width: 60%;
+    margin-right: 5em;
+    text-align: justify;
+}
+
+.general > mat-card > div > div{
+    width: 40%;
+    margin-left: 3em;
+    
 }
 .content > div{
     background-color: #4285F4;
 }
-.general > div > p{
-    grid-column: 2/5;
+
+
+mat-card > div > div > img{
+    width: 90%; 
+    height: 200px;
 }
 
-.general > div > h3{
+
+
+
+
+.general > div > div{
     grid-column: 8/12;
+}
+
+
+
+
+.doctors, .nurses, .admin{ 
+        width: 80%;
+        margin: 5em auto 0 auto;
+}
+/* 
+.mform{
+    border: 1px solid white;
+
+} */
+
+form{
+    border: 1px solid white;
+
+    width: 70%;
+    padding: 3em 0 3em 0;
+}
+
+input {
+    width: 80%;
+    margin: 10px;
+    padding: 8px;
+}
+
+
+
+
+select {
+    width: 87%;
+    margin: 10px;
+    padding: 8px;
+}
+
+
+button{
+    width: 60%;
+    padding: 7px;
+    margin-top: 10px;
+}
+
+form{
+   text-align: center;
+}
+
+.shownone{
+    display: none
+}
+
+
+
+
+
+@media only screen and (max-width: 800px) {
+    .general > mat-card > div{
+        display: block;
+    }
+
+    .showyes{
+        display: none;
+    }
+
+    .mform{
+        padding-top: 0.5em;
+    }
+
+    select {
+        width: 90%;
+       
+    }
+    
+
+    .shownone{
+        display: block;
+    }
+
+    form{
+        width: 90%;
+    }
+
+  
+
+    .general > mat-card > div > p{
+        width: 80%;
+        margin:auto;
+        text-align: justify;
+    }
+
+
+    .content {
+ 
+    
+        grid-column: 6/12;
+        grid-row: 1/6;
+        display: grid;
+        grid-template-columns: 250px;
+        grid-template-rows: 150px 150px 150px;
+    
+    }
+
+
+
+    footer > div > mat-toolbar > div {
+        margin: auto;
+    }
+    .none{
+        display:none;
+    }
+
+    mat-card > div > div > img{
+        width: 100%; 
+        height: 100px;
+    }
+
+    .shownot{
+        display: block;
+    }
+
+    .general > mat-card > div > div{
+        width: 80%;
+        margin: 0 auto 1em auto;        
+    }
+
+    
 }

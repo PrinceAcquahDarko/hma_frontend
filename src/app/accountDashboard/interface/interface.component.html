@@ -2,7 +2,7 @@
 
 
 
-<div @fadeSlideInOut>
+<div @fadeSlideInOut *ngIf = "!yes">
 
   <div class="header">
     <div>
@@ -22,6 +22,8 @@
                             <li><a [routerLink]="['patientDetails']"><mat-icon>update</mat-icon></a></li>
                             <!-- <li><a [routerLink]="['populate']"><mat-icon>person</mat-icon></a></li> -->
                             <li><a [routerLink]="['about']"><mat-icon>person</mat-icon></a></li>
+          <li><a (click) = "logout()"><mat-icon>logout</mat-icon></a></li>
+
 
 
                         </ul>
@@ -52,7 +54,7 @@
 
 
 
-          <div class="currentPatient">
+          <div class="currentPatient" *ngIf = "currentUser">
             <p>current Patient</p>
             <div >
                 <mat-card class="example-card2">
@@ -61,7 +63,7 @@
                       <div>
                         <h3>{{user?.firstname}}</h3>
                         <p>
-                            lokui458
+                          {{user?.key}}
                         </p>
                       </div>
                      
@@ -93,6 +95,51 @@
       <app-footer></app-footer>
   </div>
 </div>
+</div>
+
+<div *ngIf = 'yes'>
+  <section>
+    <header>
+      <mat-toolbar>
+          
+        <span>COMMUNITY HOSPITAL</span>
+      
+         
+ 
+      </mat-toolbar>
+    </header>
+    <nav>
+      <mat-toolbar color="primary">
+          
+        <ul>
+          <li><a [routerLink]="['home']"><mat-icon>home</mat-icon></a></li>
+          <li><a [routerLink]="['loginInPatient']"><mat-icon>edit</mat-icon></a></li>
+          <li><a [routerLink]="['patientDetails']"><mat-icon>update</mat-icon></a></li>
+          <li><a [routerLink]="['about']"><mat-icon>person</mat-icon></a></li>
+          <li><a (click) = "logout()"><mat-icon>logout</mat-icon></a></li>
+
+
+      </ul>
+      </mat-toolbar>
+    </nav>
+  </section>
+  <section>
+    <router-outlet></router-outlet>
+
+  </section>
+  <section>
+    <footer>
+      <mat-toolbar>
+          
+        <div><small>&copy; 2021 myapps.com</small></div>
+
+        
+         
+ 
+      </mat-toolbar>
+    </footer>
+  </section>
+
 </div>
 
 

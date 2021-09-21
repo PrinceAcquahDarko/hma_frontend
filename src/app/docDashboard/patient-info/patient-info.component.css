@@ -7,13 +7,6 @@
     text-align: center;
   }
 
-  /* input:not([type = 'radio']) {
-    width: 80%;
-    padding: 10px;
-    margin: 10px;
-  } */
-
-
   textarea{
     margin-top: 2em;
   }
@@ -33,6 +26,33 @@ mat-spinner{
 }
 
 
-.main{
+/* .main{
     margin-top: 10em;
+} */
+
+
+@media only screen and (max-width: 800px) { 
+
+  .main{
+    width:100%;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .card {
+    width: 90%;
+
+  }
+
+  .form{
+    width: 100%;
+  }
+
+  textarea{
+    width: 80%;
+  }
+
+  .main{
+    margin-top: 0;
+}
+
 }

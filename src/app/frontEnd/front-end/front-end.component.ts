@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {trigger, style, animate, transition} from "@angular/animations"
+import { Router } from '@angular/router';
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 
 
+const SMALL_WIDTH_BREAKPOINT = 720
 @Component({
   selector: 'app-front-end',
   templateUrl: './front-end.component.html',
@@ -22,9 +25,24 @@ import {trigger, style, animate, transition} from "@angular/animations"
 })
 export class FrontEndComponent implements OnInit {
   // selectedDate: Date = new Date();
-  constructor() { }
+  yes = false
+  constructor( private breakpointObserver: BreakpointObserver, private router: Router) { }
 
   ngOnInit(): void {
+    this.breakpointObserver.observe([
+      `(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`
+    ]).subscribe(
+      (state: BreakpointState) =>  {
+        this.yes = state.matches
+      }
+    )
+  }
+
+
+  logout(): void{
+    localStorage.clear()
+    this.router.navigate([`/home`])
+    
   }
 
 }

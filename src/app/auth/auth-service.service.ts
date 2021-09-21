@@ -3,6 +3,8 @@ import { ILogin, IRegister, IRespons } from './interface';
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import {environment} from "../../environments/environment.prod"
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,7 @@ export class AuthServiceService {
 
   constructor(private http: HttpClient) { }
   position: string = ''
-  url = 'http://localhost:3000'
+  url = environment.url
 
   registerUser(data: IRegister): Observable<any>{
     return this.http.post<IRegister>(this.url + '/register', data)

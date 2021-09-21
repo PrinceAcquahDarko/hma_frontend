@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {trigger, style, animate, transition} from "@angular/animations"
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { Router } from '@angular/router';
 
-
+const SMALL_WIDTH_BREAKPOINT = 720
 @Component({
   selector: 'app-interface',
   templateUrl: './interface.component.html',
@@ -21,12 +23,28 @@ import {trigger, style, animate, transition} from "@angular/animations"
   ]
 })
 export class InterfaceComponent implements OnInit {
-
-  constructor() { }
+ yes = false;
+  constructor(private breakpointObserver: BreakpointObserver, private router: Router ) { }
 
 
 
   ngOnInit(): void {
+
+    this.breakpointObserver.observe([
+      `(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`
+    ]).subscribe(
+      (state: BreakpointState) =>  {
+        this.yes = state.matches
+      }
+    )
   }
+
+  logout(): void{
+    localStorage.clear();
+    this.router.navigate([`/home`])
+  }
+
+
+
 
 }

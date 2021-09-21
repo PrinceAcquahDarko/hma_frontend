@@ -25,6 +25,8 @@ mat-toolbar{
   display: flex;
   color: #fff;
   justify-content: space-between;
+  background-color: #4285F4;
+
 
 
 }

@@ -59,7 +59,7 @@ margin-top: 2.9em;
 
 mat-drawer{
   background-color:  #6666ff;
-  padding: 9.3px
+  padding: 9.1px
 
 }
 ul{
@@ -128,4 +128,29 @@ ul li{
 
 .example-card2 > mat-card-content > mat-icon{
 color: white
+}
+
+.mobile{
+  display:none;
+}
+
+
+@media only screen and (max-width: 800px) {
+
+  footer >mat-toolbar > div{
+    margin: auto;
+  }
+
+  header > mat-toolbar {
+    background: #fff;
+  
+  }
+
+
+  nav > mat-toolbar > ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+  }
 }

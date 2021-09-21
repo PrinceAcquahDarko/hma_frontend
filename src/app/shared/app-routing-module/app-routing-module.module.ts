@@ -29,22 +29,22 @@ import { FrontEndComponent } from 'src/app/frontEnd/front-end/front-end.componen
 },
 
 //for doctor
-{path: 'user/doctor', canLoad: [AuthenticationGuard], component:docInterface, data: {claimType: 'doctor'},
+{path: 'user/doctor',  canLoad: [AuthenticationGuard],  component:docInterface, data: {claimType: 'doctor'},
 loadChildren: () => import('../../docDashboard/doctors.module').then(m => m.DoctorsModule)
 },
 
 //for nurse
-{path: 'user/nurse', canLoad: [AuthenticationGuard], component:nurse, data: {claimType: 'nurse'},
+{path: 'user/nurse', component:nurse, data: {claimType: 'nurse'},
 loadChildren: () => import('../../nurseDashboard/nurse.module').then(m => m.NurseModule)
 },
 
 //for lab
-{path: 'user/lab', canLoad: [AuthenticationGuard], component:lab, data: {claimType: 'lab'},
+{path: 'user/lab',canLoad: [AuthenticationGuard],  component:lab, data: {claimType: 'lab'},
 loadChildren: () => import('../../labDashboard/lab.module').then(m => m.LabModule)
 },
 
 //for pharm
-{path: 'user/pharmacy', canLoad: [AuthenticationGuard], component:pharm, data: {claimType: 'pharmacy'},
+{path: 'user/pharmacy',  component:pharm, data: {claimType: 'pharmacy'},
 loadChildren: () => import('../../pharmDashboard/pharm/pharm.module').then(m => m.PharmModule)
 },
 

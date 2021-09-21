@@ -1,7 +1,7 @@
 
 
 
-<div @fadeSlideInOut>
+<div @fadeSlideInOut class="close" *ngIf = "!yes">
   
 <div class="header">
   <div>
@@ -18,10 +18,12 @@
                       <ul>
                           <li>
                             <a [routerLink]="['home']"><mat-icon>home</mat-icon></a></li>
-                          <li><a [routerLink]="['patient']"><mat-icon>person</mat-icon></a></li>
-                          <li><a [routerLink]="['activePatient']"><mat-icon>person</mat-icon></a></li>
-                          <li><a [routerLink]="['staff']"><mat-icon>staff</mat-icon></a></li>
+                          <li><a [routerLink]="['patient']"><mat-icon>edit</mat-icon></a></li>
+                          <li><a [routerLink]="['activePatient']"><mat-icon>update</mat-icon></a></li>
+                          <li><a [routerLink]="['staff']"><mat-icon>edit</mat-icon></a></li>
                           <li><a [routerLink]="['about']"><mat-icon>person</mat-icon></a></li>
+          <li><a (click) = "logout()"><mat-icon>logout</mat-icon></a></li>
+
 
 
                       </ul>
@@ -54,7 +56,7 @@
 
 
 
-        <div class="currentPatient">
+        <div class="currentPatient" >
           <p>current Patient</p>
           <div>
               <mat-card class="example-card2">
@@ -95,6 +97,57 @@
     <app-footer></app-footer>
 </div>
 </div>
+</div>
+
+
+<div class="mobile" *ngIf = 'yes'>
+  <section>
+    <header>
+      <mat-toolbar>
+          
+        <span>COMMUNITY HOSPITAL</span>
+          
+        
+         
+ 
+      </mat-toolbar>
+    </header>
+    <nav>
+      <mat-toolbar color="primary">
+          
+        <ul>
+          <li>
+            <a [routerLink]="['home']"><mat-icon>home</mat-icon></a></li>
+          <li><a [routerLink]="['patient']"><mat-icon>edit</mat-icon></a></li>
+          <li><a [routerLink]="['activePatient']"><mat-icon>update</mat-icon></a></li>
+          <li><a [routerLink]="['staff']"><mat-icon>edit</mat-icon></a></li>
+          <li><a [routerLink]="['about']"><mat-icon>person</mat-icon></a></li>
+          <li><a (click) = "logout()"><mat-icon>logout</mat-icon></a></li>
+
+          
+
+
+      </ul>
+      </mat-toolbar>
+    </nav>
+  </section>
+  <section>
+    <router-outlet></router-outlet>
+
+  </section>
+  <section>
+    <footer>
+      <mat-toolbar>
+          
+        <div><small>&copy; 2021 myapps.com</small></div>
+
+        
+         
+ 
+      </mat-toolbar>
+    </footer>
+  </section>
+
 </div>
 
 
