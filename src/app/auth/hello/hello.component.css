@@ -10,7 +10,7 @@
     display: grid;
     grid-template-columns: repeat(1fr,12);
     grid-template-rows: auto;
-    background-image: url("https://image.shutterstock.com/image-photo/black-nurse-portrait-260nw-232644115.jpg");
+    background-image: url("https://us.123rf.com/450wm/rido/rido1704/rido170400095/76465313-portrait-of-smiling-doctor-with-stethoscope-around-his-neck-at-medical-clinic-happy-smiling-senior-d.jpg?ver=6");
     background-color: #cccccc; /* Used if the image is unavailable */
     /* height: 100%; You must set a specified height */
     background-position: center; /* Center the image */
