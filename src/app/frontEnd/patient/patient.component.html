@@ -12,7 +12,8 @@
                     <input type="text"matInput name= "key" required placeholder="PatientId" #idField = 'ngModel' [(ngModel)] = "patient.key">
                     <span [hidden]= "idField.valid || idField.untouched"> idField is required </span>
                 </div>
-                <div>
+                <div class="insurance">
+                    <label for="">Insurance</label>
                     <input type="checkbox" name= "nhis"  placeholder="nhis" #nhis = 'ngModel' [(ngModel)] = "patient.nhis">
                 </div>
     
