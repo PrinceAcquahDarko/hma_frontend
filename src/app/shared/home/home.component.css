@@ -135,8 +135,8 @@ hr{
         margin-top: 0;
         margin-bottom: 10px;
     }
-    section > h3 {
-        margin: 12px;
+    .forDocs{
+        margin-top: 12px;
     }
 
     .none{
